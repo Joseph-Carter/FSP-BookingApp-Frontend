@@ -2,12 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
 import UserList from "./Pages/UserList";
-import UserDetails from "./Pages/UserDetails";
+import UserDetails from "./Components/UserDetails";
 import BookingList from "./Pages/BookingList";
 import BookingDetails from "./Pages/BookingDetails";
 import RoomList from "./Pages/RoomList";
 import RoomDetails from "./Pages/RoomDetails";
-import NotFound from "./Pages/NotFound";
+import Four0Four from "./Pages/Four0Four";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
           <Route path="/bookings/:id" element={<BookingDetails />} />
           <Route path="/rooms" element={<RoomList />} />
           <Route path="/rooms/:id" element={<RoomDetails />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<Four0Four />} />
         </Routes>
       </Router>
     </div>
