@@ -14,8 +14,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <NavBar />
         <AuthProvider>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/users" element={<UserList />} />
@@ -25,7 +25,7 @@ function App() {
           <Route path="/rooms" element={<RoomList />} />
           <Route path="/rooms/:id" element={<RoomDetails />} />
           <Route path="*" element={<Four0Four />} />
-          </Routes>
+        </Routes>
         </AuthProvider>
       </Router>
     </div>
