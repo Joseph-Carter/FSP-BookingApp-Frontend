@@ -52,3 +52,5 @@ const navigate = useNavigate();
     </form>
   )
 }
+
+export default BookingNewForm
