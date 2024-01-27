@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate, } from "react-router-dom";
 import { AuthProvider } from "./Components/UserAuth/UserContext";
-import NavBar from "./Components/NavBar";
 import EventSpaceList from "./Components/EventSpaceList";
 import EventSpaceDetails from "./Components/EventSpaceDetails"; 
 import EventSpaceNewForm from "./Components/EventSpaceNewForm"
@@ -18,7 +17,6 @@ function App() {
     <div className="App">
       <Router>
         <AuthProvider>
-        <NavBar />
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<Auth />} />
