@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Booking from './Booking';
+
 const API = import.meta.env.VITE_API_URL;
+
 // list of existing booking
 export default function BookingList() {
     const [bookings, setBookings] = useState([]);
@@ -18,10 +20,15 @@ export default function BookingList() {
     }, [])
 
   return (
-    <div>
-        {bookings.map((booking) => (
-               <Booking key={booking.id} booking={booking} />
-        ))}      
-    </div>
+        <div>
+    {bookings.length > 0 ? (
+        bookings.map((booking) => (
+            <Booking key={booking.id} booking={booking} />
+        ))
+    ) : (
+        <p>No bookings found</p>
+    )}
+</div>
+
   )
 }
