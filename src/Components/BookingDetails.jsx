@@ -1,5 +1,5 @@
 import React from "react";
-
+// shows specific booking and options for modifying
 export default function BookingDetails({ booking }) {
   const {start_date, end_date, checkout, user_id, room_id } = booking;
 

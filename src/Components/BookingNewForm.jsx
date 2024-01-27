@@ -1,7 +1,6 @@
 import React from 'react'
-
-export default function 
-() {
+// allows booking of event space 
+export default function BookingNewForm() {
   return (
     <div>
       

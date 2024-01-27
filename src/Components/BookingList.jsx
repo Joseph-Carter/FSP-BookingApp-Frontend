@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Booking from './Booking';
 const API = import.meta.env.VITE_API_URL;
-
+// list of existing booking
 export default function BookingList() {
     const [bookings, setBookings] = useState([]);
 
