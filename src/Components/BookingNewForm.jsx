@@ -53,4 +53,3 @@ const navigate = useNavigate();
   )
 }
 
-export default BookingNewForm
