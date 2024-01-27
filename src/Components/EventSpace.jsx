@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Booking() {
-  
+export default function EventSpace() {
+
   return (
     <div>
       
