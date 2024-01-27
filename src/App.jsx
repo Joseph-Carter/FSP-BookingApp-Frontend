@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./Components/UserAuth/UserContext";
 import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
 // import UserList from "./Pages/UserList";
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <AuthProvider>
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -24,6 +26,7 @@ function App() {
           {/* <Route path="/rooms/:id" element={<RoomDetails />} /> */}
           <Route path="*" element={<Four0Four />} />
         </Routes>
+        </AuthProvider>
       </Router>
     </div>
   );
