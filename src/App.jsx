@@ -1,14 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./Components/UserAuth/UserContext";
 import NavBar from "./Components/NavBar";
-import Home from "./Pages/Home";
-// import UserList from "./Pages/UserList";
-import UserDetails from "./Components/UserDetails";
+import EventSpaceList from "./Components/EventSpaceList";
+import EventSpaceDetails from "./Components/EventSpaceDetails"; 
+import EventSpaceNewForm from "./Components/EventSpaceNewForm"
 import BookingList from "./Components/BookingList";
 import BookingDetails from "./Components/BookingDetails";
-// import RoomList from "./Pages/RoomList";
-// import RoomDetails from "./Pages/RoomDetails";
+import BookingNewForm from "./Components/BookingNewForm";
+import BookingEditForm from "./Components/BookingEditForm";
 import Four0Four from "./Pages/Four0Four";
+
 
 function App() {
   return (
@@ -17,13 +18,14 @@ function App() {
         <AuthProvider>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/users" element={<UserList />} /> */}
-          <Route path="/users/:id" element={<UserDetails />} />
           <Route path="/bookings" element={<BookingList />} />
-          <Route path="/bookings/:id" element={<BookingDetails />} />
-          {/* <Route path="/rooms" element={<RoomList />} /> */}
-          {/* <Route path="/rooms/:id" element={<RoomDetails />} /> */}
+          <Route path="/booking/:id" element={<BookingDetails />} />
+          <Route path="/booking/:new" element={<BookingNewForm />} />
+          <Route path="/booking/:edit" element={<BookingEditForm />} />
+          <Route path="/rooms" element={<EventSpaceList />} />
+          <Route path="/room/:id" element={<EventSpaceDetails />} />
+          <Route path="/room/:new" element={<EventSpaceNewForm />} />
+          <Route path="/room/:edit" element={<EventSpaceNewForm />} />
           <Route path="*" element={<Four0Four />} />
         </Routes>
         </AuthProvider>
