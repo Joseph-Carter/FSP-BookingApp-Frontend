@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const API = import.meta.env.VITE_API_URL;
 
-const SignUpForm = () => {
+const SignUpForm = ({ setShowNavbar }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
     email: "",
@@ -12,6 +12,10 @@ const SignUpForm = () => {
     password: "",
     passwordConfirmation: "",
   });
+
+  useEffect(() => {
+    setShowNavbar(false);
+  }, [setShowNavbar]);
 
   const addUser = () => {
     fetch(`${API}/users/signup`, {

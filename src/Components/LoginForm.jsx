@@ -4,7 +4,7 @@ import { useAuth } from "./UserAuth/UserContext";
 
 const API = import.meta.env.VITE_API_URL;
 
-const LoginForm = () => {
+const LoginForm = ({ setShowNavbar }) => {
   const navigate = useNavigate();
   const [userInput, setUserInput] = useState({
     email: "",
@@ -14,9 +14,14 @@ const LoginForm = () => {
 
   useEffect(() => {
     if (user.id) {
-      navigate(`/rooms`);
+      navigate(`/events`);
     }
   }, [user]);
+
+  useEffect(() => {
+    setShowNavbar(false);
+  }, [setShowNavbar]);
+
 
   const handleTextInput = (e) => {
     setUserInput({ ...userInput, [e.target.id]: e.target.value });
