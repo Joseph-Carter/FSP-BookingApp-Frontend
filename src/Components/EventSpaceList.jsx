@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import EventSpace from './EventSpace'
+import "./Card.css";
 const API = import.meta.env.VITE_API_URL;
 // list all available event spaces
 export default function EventSpaceList() {

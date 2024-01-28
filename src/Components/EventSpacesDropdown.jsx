@@ -1,10 +1,12 @@
-import React from "react";
+import {useState, useEffect, React } from "react";
+
+const API = import.meta.env.VITE_API_URL;
 
 export default function EventSpacesDropdown({ preselectedSpaceId }) {
     const [eventSpaces, setEventSpaces] = useState([]);
 
     useEffect(() => {
-        fetch('/api/eventspaces')
+        fetch(`/${API}/eventspace`)
             .then(response => response.json())
             .then(data => setEventSpaces(data))
             .catch(error => console.error('Error:', error));

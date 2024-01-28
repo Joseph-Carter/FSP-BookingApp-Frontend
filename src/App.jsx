@@ -27,9 +27,9 @@ function App() {
           <Route path="/login" element={<Auth />} />
           <Route path="/signup" element={<Auth />} />
           <Route path="/bookings" element={<BookingList />} />
-          <Route path="/booking/:id" element={<BookingDetails />} />
-          <Route path="/booking/:new" element={<BookingNewForm />} />
-          <Route path="/booking/:edit" element={<BookingEditForm />} />
+          <Route path="/bookings/:id" element={<BookingDetails />} />
+          <Route path="/bookings/:new" element={<BookingNewForm />} />
+          <Route path="/bookings/:edit" element={<BookingEditForm />} />
           <Route path="/eventspace" element={<EventSpaceList />} />
           <Route path="/eventspace/:id" element={<EventSpaceDetails />} />
           <Route path="/eventspace/:new" element={<EventSpaceNewForm />} />
