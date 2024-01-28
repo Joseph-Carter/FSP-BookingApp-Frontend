@@ -16,7 +16,7 @@ export default function EventSpaceEditForm() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		fetch(`${API}/eventspaces`, {
+		fetch(`${API}/eventspace`, {
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",
@@ -26,7 +26,7 @@ export default function EventSpaceEditForm() {
 			.then((res) => res.json())
 			.then((data) => {
 				console.log("Event Space created:", data);
-				navigate("/eventspaces");
+				navigate("/eventspace");
 			})
 			.catch((err) => {
 				console.error("Error:", err);
