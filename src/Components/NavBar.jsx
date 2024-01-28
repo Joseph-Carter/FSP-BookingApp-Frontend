@@ -13,7 +13,7 @@ const NavBar = () => {
         <Link to={`/bookings/new`}>New Booking</Link>
       </h2>
       <h2 className="logout navlink">
-        <Link to={`/`}>Log Out</Link>
+        <Link to={`/login`}>Log Out</Link>
       </h2>
     </nav>
   );

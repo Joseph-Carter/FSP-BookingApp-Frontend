@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, Navigate, } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { AuthProvider } from "./Components/UserAuth/UserContext";
 import NavBar from "./Components/NavBar";
 import BookingList from "./Components/BookingList";
@@ -20,8 +25,6 @@ function App() {
             <Route path="/signup" element={<Auth />} />
             <Route path="/bookings" element={<BookingList />} />
             <Route path="/bookings/:id" element={<BookingDetails />} />
-            {/* <Route path="/rooms" element={<RoomList />} /> */}
-            {/* <Route path="/rooms/:id" element={<RoomDetails />} /> */}
             <Route path="*" element={<Four0Four />} />
           </Routes>
         </AuthProvider>
