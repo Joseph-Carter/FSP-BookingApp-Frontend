@@ -1,0 +1,33 @@
+.card {
+    border-style: solid;
+    border-color: black;
+    width: 18rem;
+    box-shadow: 10px 5px 5px gray;
+    border-radius: 0.5rem;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.eventSpace-CardList-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  align-items: center;
+}
+
+.eventSpace-CardList-card-grid{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.2 rem;
+}
+
+img{
+  border-radius: 8px;
+   border: 1px solid #ddd;
+  padding: 5px;
+  width: 150px;
+}
