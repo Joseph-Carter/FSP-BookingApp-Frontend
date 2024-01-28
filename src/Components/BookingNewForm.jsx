@@ -1,5 +1,6 @@
-import React from "react";
-import { useState, useNavigate } from "react-router-dom";
+import {useState, React } from "react";
+import { useNavigate } from "react-router-dom";
+import EventSpacesDropdown from "./EventSpacesDropdown";
 
 const API = import.meta.env.VITE_API_URL;
 
