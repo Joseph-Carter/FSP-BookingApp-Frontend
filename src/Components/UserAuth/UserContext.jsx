@@ -12,17 +12,17 @@ export const AuthProvider = (props) => {
   });
 
   const loginUser = (userInput) =>
-    fetch(`${API}/users/:id`, {
+    fetch(`${API}/users`, {
       method: "POST",
       body: JSON.stringify(userInput),
       headers: {
-        Content_Type: "application/json",
+        "Content-Type": "application/json",
       },
     })
       .then((response) => response.json())
       .then((data) => {
         setUser(data);
-        navigate(`/login`)
+        navigate(`/eventspace`)
       });
 
   const value = {

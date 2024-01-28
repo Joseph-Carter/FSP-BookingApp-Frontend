@@ -30,10 +30,10 @@ function App() {
           <Route path="/booking/:id" element={<BookingDetails />} />
           <Route path="/booking/:new" element={<BookingNewForm />} />
           <Route path="/booking/:edit" element={<BookingEditForm />} />
-          <Route path="/rooms" element={<EventSpaceList />} />
-          <Route path="/room/:id" element={<EventSpaceDetails />} />
-          <Route path="/room/:new" element={<EventSpaceNewForm />} />
-          <Route path="/room/:edit" element={<EventSpaceNewForm />} />
+          <Route path="/eventspace" element={<EventSpaceList />} />
+          <Route path="/eventspace/:id" element={<EventSpaceDetails />} />
+          <Route path="/eventspace/:new" element={<EventSpaceNewForm />} />
+          <Route path="/eventspace/:edit" element={<EventSpaceNewForm />} />
           <Route path="*" element={<Four0Four />} />
         </Routes>
         </AuthProvider>
