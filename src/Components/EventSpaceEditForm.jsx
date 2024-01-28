@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom"
 
 const API = import.meta.env.VITE_API_URL;
 
-// add new event spaces admin only or managers
-export default function EventSpaceNewForm() {
+export default function EventSpaceEditForm() {
 	const [eventspaces, setEventspaces] = useState({
 		name: "",
 		capacity: 0,
@@ -18,7 +17,7 @@ export default function EventSpaceNewForm() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		fetch(`${API}/eventspaces`, {
-			method: "POST",
+			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -26,7 +25,7 @@ export default function EventSpaceNewForm() {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				console.log("Event Space updated:", data);
+				console.log("Event Space created:", data);
 				navigate("/eventspaces");
 			})
 			.catch((err) => {
@@ -78,7 +77,7 @@ export default function EventSpaceNewForm() {
 				placeholder='Description'
 				onChange={handleChange}
 			/>
-			<button type='submit'>Submit Event Space</button>
+			<button type='submit'>Update Event Space</button>
 			<button type='button' onClick={() => navigate("/eventspaces")}>
 				Cancel Event Space
 			</button>

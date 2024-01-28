@@ -40,47 +40,17 @@ export default function BookingNewForm() {
   };
 
   return (
-    <form>
-      <input
-        type="text"
-        name="name"
-        placeholder="Event Name"
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="number"
-        name="user_id"
-        placeholder="Client Name"
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="number"
-        name="room_id"
-        placeholder="Room Name"
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="dateTime"
-        name="start_date"
-        onChange={handleChange}
-        required
-      />
-      <input type="dateTime" name="end_date" onChange={handleChange} required />
-      <input
-        type="number"
-        name="attendees"
-        placeholder="Number of Attendees Name"
-        onChange={handleChange}
-      />
-      <textarea
-        name="special_requirements"
-        placeholder="Special aRequirements"
-        onChange={handleChange}
-      ></textarea>
-      <button name="submit">Submit Booking</button>
+    <form onSubmit={handleSubmit}>
+      <input type="text" name="name" placeholder="Event Name" onChange={handleChange} required />
+      <input type="text" name="user_id" placeholder="Client ID" onChange={handleChange} required />
+      <input type="text" name="room_id" placeholder="Room ID" onChange={handleChange} required />
+      <input type="datetime-local" name="start_date" onChange={handleChange} required />
+      <input type="datetime-local" name="end_date" onChange={handleChange} required />
+      <input type="number" name="attendees" placeholder="Number of Attendees" onChange={handleChange} />
+      <textarea name="special_requirements" placeholder="Special Requirements" onChange={handleChange}></textarea>
+      <EventSpacesDropdown />
+      <button type="submit">Submit Booking</button>
+      <button type="button" onClick={() => navigate("/bookings")}>Cancel Booking</button>
     </form>
   );
 }
