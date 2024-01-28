@@ -6,7 +6,7 @@ export default function EventSpacesDropdown({ preselectedSpaceId }) {
     const [eventSpaces, setEventSpaces] = useState([]);
 
     useEffect(() => {
-        fetch(`/${API}/eventspaces`)
+        fetch(`/${API}/eventspace`)
             .then(response => response.json())
             .then(data => setEventSpaces(data))
             .catch(error => console.error('Error:', error));
