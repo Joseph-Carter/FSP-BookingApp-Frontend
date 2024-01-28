@@ -4,7 +4,7 @@ import EventSpace from './EventSpace'
 
 
 // shows individual event spaces and a booking form
-export default function EventSpaceDetails() {
+export default function EventSpaceDetails({space}) {
 
   return (
     <div>
