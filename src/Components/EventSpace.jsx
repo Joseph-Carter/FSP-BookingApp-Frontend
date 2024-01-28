@@ -1,12 +1,12 @@
 import React from "react";
 
-export default function EventSpace({ room }) {
+export default function EventSpace({ space }) {
 
   return (
     <div>
-      <p>{room.name}</p>
-      <p>{room.capacity}</p>
-      <p>{room.location}</p>
-      {room.image ? <img src={room.image} /> : null}    </div>
+      <p>{space.name}</p>
+      <p>{space.capacity}</p>
+      <p>{space.location}</p>
+      {space.image ? <img src={space.image} /> : null}    </div>
   );
 }

@@ -8,8 +8,8 @@ export default function EventSpaceDetails() {
 
   return (
     <div>
-      <EventSpace room={room} />
-      <p>{room.description}</p>
+      <EventSpace space={space} />
+      <p>{space.description}</p>
       <BookingNewForm />
     </div>
   )

@@ -12,7 +12,7 @@ export const AuthProvider = (props) => {
   });
 
   const loginUser = (userInput) =>
-    fetch(`${API}/users/`, {
+    fetch(`${API}/users/:id`, {
       method: "POST",
       body: JSON.stringify(userInput),
       headers: {
