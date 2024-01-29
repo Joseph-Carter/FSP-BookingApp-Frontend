@@ -36,7 +36,7 @@ function App() {
           <Route path="/events" element={<EventSpaceList />} />
           <Route path="/events/:id" element={<EventSpaceDetails />} />
           <Route path="/events/new" element={<EventSpaceNewForm />} />
-          <Route path="/events/edit" element={<EventSpaceNewForm />} />
+          <Route path="/events/edit" element={<EventSpaceEditForm />} />
           <Route path="*" element={<Four0Four />} />
         </Routes>
         </AuthProvider>
