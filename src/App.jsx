@@ -6,6 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import NavBar from './Components/NavBar';
+import Footer from './Components/Footer';
 import { AuthProvider } from "./Components/UserAuth/UserContext";
 import EventSpaceList from "./Components/EventSpaceList";
 import EventSpaceDetails from "./Components/EventSpaceDetails"; 
@@ -39,6 +40,7 @@ function App() {
           <Route path="/events/edit" element={<EventSpaceNewForm />} />
           <Route path="*" element={<Four0Four />} />
         </Routes>
+        <Footer />
         </AuthProvider>
       </Router>
     </div>
