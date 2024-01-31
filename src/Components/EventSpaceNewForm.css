@@ -28,19 +28,21 @@
 }
 
 .submit-button {
-  background-color: #007bff;
+  background-color: #090909;
   color: #fff;
   margin-right: 10px;
 }
 
 .cancel-button {
-  background-color: #dc3545;
+  background-color: #090909;
+  color: #fff;
+  margin-right: 10px;
 }
 
 .submit-button:hover {
-  background-color: #0056b3;
+  /* background-color: #b3a700; */
 }
 
 .cancel-button:hover {
-  background-color: #c82333;
+  /* background-color: #c82333; */
 }

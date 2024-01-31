@@ -28,7 +28,7 @@ export default function EventSpaceNewForm() {
 			.then((res) => res.json())
 			.then((data) => {
 				console.log("Event Space updated:", data);
-				navigate(`/eventspaces`);
+				navigate(`/events`);
 			})
 			.catch((err) => {
 				console.error("Error:", err);
@@ -86,7 +86,7 @@ export default function EventSpaceNewForm() {
             onChange={handleChange}
         />
         <button className='submit-button' type='submit'>Submit</button>
-        <button className='cancel-button' type='button' onClick={() => navigate(`/eventspaces`)}>
+        <button className='cancel-button' type='button' onClick={() => navigate(`/events`)}>
             Cancel
         </button>
     </form>

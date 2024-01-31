@@ -22,7 +22,7 @@ export const AuthProvider = (props) => {
       .then((response) => response.json())
       .then((data) => {
         setUser(data);
-        navigate(`/eventspace`)
+        navigate(`/events`)
       });
 
   const value = {

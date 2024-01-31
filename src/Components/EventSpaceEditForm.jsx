@@ -77,7 +77,7 @@ export default function EventSpaceEditForm() {
 					placeholder='Description'
 					onChange={ handleChange } />
 				<button type='submit'>Update Event Space</button>
-				<button type='button' onClick={ () => navigate( "/eventspace" ) }>
+				<button type='button' onClick={ () => navigate( `/events`) }>
 					Cancel Event Space
 				</button>
 			</form>
