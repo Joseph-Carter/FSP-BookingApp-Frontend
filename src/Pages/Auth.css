@@ -28,12 +28,12 @@ body {
     width: 100vw;
   }
   
-  .cosmicConnectLogo {
+  /* .cosmicConnectLogo {
     height: 150px;
     padding-bottom: 50px;
     padding-top: Z24px;
     padding-left: 24px;
-  }
+  } */
   
   .splashBackground-image:nth-child(1) {
     background-image: url("https://www.metlifestadium.com/images/default-source/corporate/corporate-event-page.jpg?sfvrsn=38a29478_2");

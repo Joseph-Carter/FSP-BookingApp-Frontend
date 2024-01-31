@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "./UserAuth/UserContext";
-import "./LoginForm.css"
+import styled from 'styled-components';
+import "./LoginForm.css";
+import { HeroSection, VenueVerse, Slogan, DarkOverlay } from "../Pages/Hero";
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -29,40 +31,50 @@ const LoginForm = () => {
   };
 
   return (
-    <div class="loginForm">
-      <header class="welcomeHeader">Login</header>
-      <form onSubmit={handleSubmit}>
-        <input
-          class="inputEmail inputField"
-          id="email"
-          value={userInput.email}
-          type="text"
-          onChange={handleTextInput}
-          placeholder="Enter email"
-          required
-        />
-        <br />
-        <input
-          className="inputPassword inputField"
-          id="password"
-          value={userInput.password}
-          type="password"
-          onChange={handleTextInput}
-          placeholder="Enter password"
-          required
-        />
-        <br />
-        <button class="loginButton authButtons" type="submit">
-          Log In
-        </button>
-      </form>
+    <>
+      <HeroSection>
+        <DarkOverlay />
+        <VenueVerse>VENUEVERSE</VenueVerse>
+        <Slogan>Where Venues Meet Versatility</Slogan>
+      </HeroSection>
       <br />
-      <Link to={`/signup`} class="signupButtonWord">
-        <button class="signupButton authButtons" type="button">
-          Sign Up
-        </button>
-      </Link>
-    </div>
+      <p></p>
+      <br />
+      <div className="loginForm">
+        <header className="welcomeHeader">Login</header>
+        <form onSubmit={handleSubmit}>
+          <input
+            className="inputEmail inputField"
+            id="email"
+            value={userInput.email}
+            type="text"
+            onChange={handleTextInput}
+            placeholder="Enter email"
+            required
+          />
+          <br />
+          <input
+            className="inputPassword inputField"
+            id="password"
+            value={userInput.password}
+            type="password"
+            onChange={handleTextInput}
+            placeholder="Enter password"
+            required
+          />
+          <br />
+          <button className="loginButton authButtons" type="submit">
+            Log In
+          </button>
+        </form>
+        <br />
+        <Link to={`/signup`} className="signupButtonWord">
+          <button className="signupButton authButtons" type="button">
+            Sign Up
+          </button>
+        </Link>
+      </div>
+    </>
   );
 };
 
