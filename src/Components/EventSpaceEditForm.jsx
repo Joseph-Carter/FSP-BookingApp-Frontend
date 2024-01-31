@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"
-import "./EventSpaceEditForm.css"
+import { useNavigate } from "react-router-dom";
+import "./EventSpaceEditForm.css";
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -40,51 +40,66 @@ export default function EventSpaceEditForm() {
 
 	return (
 		<>
-		<div className="edit-eventspace-form-container">
-			<form className="edit-eventspace-form" onSubmit={ handleSubmit }>
-				<input
-					type='text'
-					name='name'
-					id='name'
-					value={ events.name }
-					placeholder='Event Space Name'
-					onChange={ handleChange } />
-				<input
-					type='number'
-					name='capacity'
-					value={ events.capacity }
-					placeholder='Capacity'
-					onChange={ handleChange } />
-				<input
-					type='text'
-					name='location'
-					id='location'
-					value={ events.location }
-					placeholder='Location'
-					onChange={ handleChange } />
-				<input
-					type='text'
-					name='image'
-					id='image'
-					value={ events.image }
-					placeholder='Image'
-					onChange={ handleChange } />
-				<input
-					type='text'
-					name='description'
-					id='description'
-					value={ events.description }
-					placeholder='Description'
-					onChange={ handleChange } />
-				<button type='submit'>Update Event Space</button>
-				<button type='button' onClick={ () => navigate( `/events`) }>
-					Cancel Event Space
-				</button>
-			</form>
-		<div className="edit-eventspace-form-image-preview">
-			<img src={ events.image } />
-		</div>
-		</div>
-		</>	
+			<div className='EventSpaceEditForm-container'>
+				<form className='EventSpaceEditForm' onSubmit={handleSubmit}>
+					<fieldset>
+						<legend>Edit Event Space</legend>
+						<input
+							type='text'
+							name='name'
+							id='EventSpaceEditForm-name'
+							value={events.name}
+							placeholder='Event Space Name'
+							onChange={handleChange}
+						/>
+						<br />
+						<input
+							type='number'
+							name='capacity'
+							id='EventSpaceEditForm-capacity'
+							value={events.capacity}
+							placeholder='Capacity'
+							onChange={handleChange}
+						/>
+						<br />
+						<input
+							type='text'
+							name='location'
+							id='EventSpaceEditForm-location'
+							value={events.location}
+							placeholder='Location'
+							onChange={handleChange}
+						/>
+						<br />
+						<input
+							type='text'
+							name='image'
+							id='EventSpaceEditForm-image'
+							value={events.image}
+							placeholder='Image'
+							onChange={handleChange}
+						/>
+						<br />
+						<input
+							type='text'
+							name='description'
+							id='EventSpaceEditForm-description'
+							value={events.description}
+							placeholder='Description'
+							onChange={handleChange}
+						/>
+						<br />
+						<button type='submit' className="EventSpaceEditForm-submit">Update Event Space</button>
+						<br />
+						<button type='button' className="EventSpaceEditForm-cancel" onClick={() => navigate(`/events`)}>
+							Cancel Event Space
+						</button>
+					</fieldset>
+				</form>
+				<div className='EventSpaceEditForm-image-preview'>
+					<img src={events.image} />
+				</div>
+			</div>
+		</>
 	);
 }

@@ -46,69 +46,82 @@ export default function BookingEditForm() {
     };
 
     return (
-			<div className='edit-booking-form-container'>
-				<form className='edit-booking-form' onSubmit={handleSubmit}>
+		<div className='BookingEditForm-container'>
+				<form className='BookingEditForm' onSubmit={handleSubmit}>
+				<fieldset>
+					<legend>Edit Booking</legend>
 					<input
 						type='text'
 						name='name'
-						id='name'
+						id='BookingEditForm-name'
 						value={booking.name}
 						onChange={handleChange}
 						placeholder='Event Name'
 						required
 					/>
+					<br />
 					<input
 						type='number'
 						name='user_id'
-						id='user_id'
+						id='BookingEditForm-user_id'
 						value={booking.user_id}
 						onChange={handleChange}
 						placeholder='Client Name'
 						required
 					/>
+					<br />
 					<input
 						type='number'
 						name='room_id'
-						id='room_id'
+						id='BookingEditForm-room_id'
 						value={booking.room_id}
 						onChange={handleChange}
 						placeholder='Room Name'
 						required
 					/>
+					<br />
 					<input
 						type='datetime-local'
                         name='start_date'
-                        id='start_date'
+                        id='BookingEditForm-start_date'
 						value={booking.start_date}
 						onChange={handleChange}
 						required
 					/>
+					<br />	
 					<input
 						type='datetime-local'
                         name='end_date'
-                        id='end_date'
+                        id='BookingEditForm-end_date'
 						value={booking.end_date}
 						onChange={handleChange}
 						required
 					/>
+					<br />
 					<input
 						type='number'
                         name='attendees'
-                        id='attendees'
+                        id='BookingEditForm-attendees'
 						value={booking.attendees}
 						onChange={handleChange}
 						placeholder='Number of Attendees'
 					/>
+					<br />
 					<textarea
                         name='special_requirements'
-                        id='special_requirements'
+                        id='BookingEditForm-special_requirements'
 						value={booking.special_requirements}
 						onChange={handleChange}
 						placeholder='Special Requirements'></textarea>
+					<br />
 					<EventSpacesDropdown />
-					<button type='submit'>Update Booking</button>
-					<button>Cancel</button>
-				</form>
+					<br />
+					<button type='submit' className='BookingEditForm-submit'>Update Booking</button>
+					<br />
+					<button type='button' className='BookingEditForm-cancel' onClick={() => navigate(`/bookings`)}>Cancel</button>
+					</fieldset>
+			</form>
+			
 			</div>
 		);
 }

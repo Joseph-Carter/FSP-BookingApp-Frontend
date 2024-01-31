@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./EventSpaceNewForm.css";
 
+
 const API = import.meta.env.VITE_API_URL;
 
 // add new event spaces admin only or managers
@@ -57,6 +58,7 @@ export default function EventSpaceNewForm() {
         <input 
             className='input-number'
             type='number'
+            id='number'
             name='capacity'
             value={events.capacity}
             placeholder='Capacity'
