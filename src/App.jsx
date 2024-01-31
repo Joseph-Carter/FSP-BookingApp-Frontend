@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -9,7 +9,8 @@ import NavBar from './Components/NavBar';
 import { AuthProvider } from "./Components/UserAuth/UserContext";
 import EventSpaceList from "./Components/EventSpaceList";
 import EventSpaceDetails from "./Components/EventSpaceDetails"; 
-import EventSpaceNewForm from "./Components/EventSpaceNewForm"
+import EventSpaceNewForm from "./Components/EventSpaceNewForm";
+import EventSpaceEditForm from "./Components/EventSpaceEditForm";
 import BookingList from "./Components/BookingList";
 import BookingDetails from "./Components/BookingDetails";
 import BookingNewForm from "./Components/BookingNewForm";
