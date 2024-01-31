@@ -1,0 +1,32 @@
+html {
+	background-image: 'https://essencedining.com/wp-content/uploads/2022/11/Sky-Bar-4.jpg';
+}
+
+.edit-booking-form-container {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
+
+#name {
+	background-color: #167ab4;
+}
+
+#user_id {
+	background-color: #167ab4;
+}
+
+#room_id {
+	background-color: #167ab4;
+}
+
+#start_date {
+	background-color: #167ab4;
+}
+
+#end_date {
+	background-color: #167ab4;
+}
+
+#special_requirements {
+	background-color: #167ab4;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import EventSpacesDropdown from './EventSpacesDropdown';
+import './BookingEditForm.css'
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -45,61 +46,69 @@ export default function BookingEditForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input 
-                type="text" 
-                name="name" 
-                value={booking.name} 
-                onChange={handleChange} 
-                placeholder="Event Name" 
-                required 
-            />
-            <input 
-                type="number" 
-                name="user_id" 
-                value={booking.user_id} 
-                onChange={handleChange} 
-                placeholder="Client Name" 
-                required 
-            />
-            <input 
-                type="number" 
-                name="room_id" 
-                value={booking.room_id} 
-                onChange={handleChange} 
-                placeholder="Room Name" 
-                required 
-            />
-            <input 
-                type="datetime-local" 
-                name="start_date" 
-                value={booking.start_date} 
-                onChange={handleChange} 
-                required 
-            />
-            <input 
-                type="datetime-local" 
-                name="end_date" 
-                value={booking.end_date} 
-                onChange={handleChange} 
-                required 
-            />
-            <input 
-                type="number" 
-                name="attendees" 
-                value={booking.attendees} 
-                onChange={handleChange} 
-                placeholder="Number of Attendees" 
-            />
-            <textarea 
-                name="special_requirements" 
-                value={booking.special_requirements} 
-                onChange={handleChange} 
-                placeholder="Special Requirements"
-            ></textarea>
-			<EventSpacesDropdown />
-            <button type="submit">Update Booking</button>
-            <button>Cancel</button>
-        </form>
-    );
+			<div className='edit-booking-form-container'>
+				<form className='edit-booking-form' onSubmit={handleSubmit}>
+					<input
+						type='text'
+						name='name'
+						id='name'
+						value={booking.name}
+						onChange={handleChange}
+						placeholder='Event Name'
+						required
+					/>
+					<input
+						type='number'
+						name='user_id'
+						id='user_id'
+						value={booking.user_id}
+						onChange={handleChange}
+						placeholder='Client Name'
+						required
+					/>
+					<input
+						type='number'
+						name='room_id'
+						id='room_id'
+						value={booking.room_id}
+						onChange={handleChange}
+						placeholder='Room Name'
+						required
+					/>
+					<input
+						type='datetime-local'
+                        name='start_date'
+                        id='start_date'
+						value={booking.start_date}
+						onChange={handleChange}
+						required
+					/>
+					<input
+						type='datetime-local'
+                        name='end_date'
+                        id='end_date'
+						value={booking.end_date}
+						onChange={handleChange}
+						required
+					/>
+					<input
+						type='number'
+                        name='attendees'
+                        id='attendees'
+						value={booking.attendees}
+						onChange={handleChange}
+						placeholder='Number of Attendees'
+					/>
+					<textarea
+                        name='special_requirements'
+                        id='special_requirements'
+						value={booking.special_requirements}
+						onChange={handleChange}
+						placeholder='Special Requirements'></textarea>
+					<EventSpacesDropdown />
+					<button type='submit'>Update Booking</button>
+					<button>Cancel</button>
+				</form>
+			</div>
+		);
 }
