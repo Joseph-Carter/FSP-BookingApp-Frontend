@@ -30,6 +30,7 @@ export default function Booking({ booking }) {
         <p>Attendees: {attendees}</p>
         <p>Additional Info: {special_requirements}</p>
       </Link>
+      
     </div>
   );
 }
