@@ -1,6 +1,6 @@
 .EventSpaceEditForm-container {
 	height: 100vh;
-	background-image: url('https://sdg-migration-id.s3.amazonaws.com/Interior-Design-MAD-Architects-Hanergy-Living-Garden-03-03.19.jpg');
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://sdg-migration-id.s3.amazonaws.com/Interior-Design-MAD-Architects-Hanergy-Living-Garden-03-03.19.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
