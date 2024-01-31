@@ -18,7 +18,7 @@ export default function EventSpaceNewForm() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		fetch(`${API}/eventspace`, {
+		fetch(`${API}/eventspaces`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -28,7 +28,7 @@ export default function EventSpaceNewForm() {
 			.then((res) => res.json())
 			.then((data) => {
 				console.log("Event Space updated:", data);
-				navigate("/eventspace");
+				navigate(`/eventspaces`);
 			})
 			.catch((err) => {
 				console.error("Error:", err);
@@ -39,50 +39,58 @@ export default function EventSpaceNewForm() {
 		setEventspaces({ ...eventspaces, [e.target.name]: e.target.value });
 	};
 	return (
-		<form onSubmit={handleSubmit}>
-			<input
-				type='text'
-				name='name'
-				id='name'
-				value={eventspaces.name}
-				placeholder='Event Space Name'
-				onChange={handleChange}
-			/>
-			<input
-				type='number'
-				name='capacity'
-				value={eventspaces.capacity}
-				placeholder='Capacity'
-				onChange={handleChange}
-			/>
-			<input
-				type='text'
-				name='location'
-				id='location'
-				value={eventspaces.location}
-				placeholder='Location'
-				onChange={handleChange}
-			/>
-			<input
-				type='text'
-				name='image'
-				id='image'
-				value={eventspaces.image}
-				placeholder='Image'
-				onChange={handleChange}
-			/>
-			<input
-				type='text'
-				name='description'
-				id='description'
-				value={eventspaces.description}
-				placeholder='Description'
-				onChange={handleChange}
-			/>
-			<button type='submit'>Submit Event Space</button>
-			<button type='button' onClick={() => navigate("/eventspace")}>
-				Cancel Event Space
-			</button>
-		</form>
+		<div class="form-container">
+    <form onSubmit={handleSubmit}>
+        <input 
+            className='input-text'
+            type='text'
+            name='name'
+            id='name'
+            value={eventspaces.name}
+            placeholder='Event Space Name'
+            onChange={handleChange}
+        />
+        <input 
+            className='input-number'
+            type='number'
+            name='capacity'
+            value={eventspaces.capacity}
+            placeholder='Capacity'
+            onChange={handleChange}
+        />
+        <input 
+            className='input-text'
+            type='text'
+            name='location'
+            id='location'
+            value={eventspaces.location}
+            placeholder='Location'
+            onChange={handleChange}
+        />
+        <input
+            className='input-text'
+            type='text'
+            name='image'
+            id='image'
+            value={eventspaces.image}
+            placeholder='Image'
+            onChange={handleChange}
+        />
+        <input
+            className='input-text'
+            type='text'
+            name='description'
+            id='description'
+            value={eventspaces.description}
+            placeholder='Description'
+            onChange={handleChange}
+        />
+        <button className='submit-button' type='submit'>Submit</button>
+        <button className='cancel-button' type='button' onClick={() => navigate(`/eventspaces`)}>
+            Cancel
+        </button>
+    </form>
+</div>
+
 	);
 }
