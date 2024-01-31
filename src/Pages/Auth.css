@@ -1,0 +1,63 @@
+body {
+    background: #000;
+  }
+  
+  .splashBackground {
+    position: absolute;
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+  }
+  
+  .splashBackground-image {
+    animation: kenburns 30s linear infinite;
+    background-size: cover;
+    background-position: 50%;
+    height: 100vh;
+    inset: 0;
+    opacity: 0;
+    position: absolute;
+    scale: 1.2;
+    width: 100vw;
+  }
+  
+  .bookingAuth {
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .cosmicConnectLogo {
+    height: 150px;
+    padding-bottom: 50px;
+    padding-top: Z24px;
+    padding-left: 24px;
+  }
+  
+  .splashBackground-image:nth-child(1) {
+    background-image: url("https://www.metlifestadium.com/images/default-source/corporate/corporate-event-page.jpg?sfvrsn=38a29478_2");
+  }
+  .splashBackground-image:nth-child(2) {
+    animation-delay: 10s;
+    background-image: url("https://www.acenet.edu/PublishingImages/Interior-Page-Heroes/2018ACE-1045.JPG?RenditionID=10");
+  }
+  .splashBackground-image:nth-child(3) {
+    animation-delay: 20s;
+    background-image: url("https://www.theplazany.com/wp-content/uploads/2016/02/Events_TheGrandBallroom_Gallery_SlideshowGallery_4.jpg");
+  }
+  
+  @keyframes kenburns {
+    25% {
+      opacity: 1;
+    }
+  
+    50% {
+      opacity: 0.8;
+      scale: 1;
+    }
+  
+    60% {
+      opacity: 0;
+    }
+  }

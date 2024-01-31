@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "./UserAuth/UserContext";
+import "./LoginForm.css"
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -34,7 +35,7 @@ const LoginForm = ({ setShowNavbar }) => {
 
   return (
     <div className="loginForm">
-      <header className="welcomeHeader">Welcome Back</header>
+      <header className="welcomeHeader">Login</header>
       <form onSubmit={handleSubmit}>
         <input
           className="inputEmail inputfield"

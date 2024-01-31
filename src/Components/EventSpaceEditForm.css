@@ -1,0 +1,37 @@
+html {
+	background-image: 'https://sdg-migration-id.s3.amazonaws.com/Interior-Design-MAD-Architects-Hanergy-Living-Garden-03-03.19.jpg';
+	
+
+}
+
+.edit-eventspace-form-container {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
+
+.edit-eventspace-form {
+	float: left;
+}
+.edit-eventspace-form-image-preview {
+	float: right;
+}
+
+#name {
+	background-color: #7b9338 ;
+}
+
+#capacity {
+	background-attachment: #7b9338;
+}
+
+#location {
+	background-color: #7b9338;
+}
+
+#image {
+	background-color: #7b9338;
+}
+
+#description {
+	background-color: #7b9338;
+}
