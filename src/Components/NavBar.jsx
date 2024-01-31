@@ -57,7 +57,7 @@ const BookingButton = styled.button`
 const NavBar = () => {
   return (
     <NavbarContainer>
-      <StyledLink to={`/rooms`}>
+      <StyledLink to={`/events`}>
         <img src="/map.jpeg" alt="Event Icon" />
         <span>Spaces</span>
       </StyledLink>
