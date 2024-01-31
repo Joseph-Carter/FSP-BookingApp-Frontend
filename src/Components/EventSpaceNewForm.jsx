@@ -45,6 +45,7 @@ export default function EventSpaceNewForm() {
 	};
 	return (
 		<div className="form-container">
+            <h2>Update Event Space</h2>
     <form onSubmit={handleSubmit}>
         <input 
             className='input-text'
