@@ -37,50 +37,52 @@ export default function EventSpaceEditForm() {
 		setEventspaces({ ...eventspaces, [e.target.name]: e.target.value });
 	};
 	return (
-		<form onSubmit={handleSubmit}>
-			<input
-				type='text'
-				name='name'
-				id='name'
-				value={eventspaces.name}
-				placeholder='Event Space Name'
-				onChange={handleChange}
-			/>
-			<input
-				type='number'
-				name='capacity'
-				value={eventspaces.capacity}
-				placeholder='Capacity'
-				onChange={handleChange}
-			/>
-			<input
-				type='text'
-				name='location'
-				id='location'
-				value={eventspaces.location}
-				placeholder='Location'
-				onChange={handleChange}
-			/>
-			<input
-				type='text'
-				name='image'
-				id='image'
-				value={eventspaces.image}
-				placeholder='Image'
-				onChange={handleChange}
-			/>
-			<input
-				type='text'
-				name='description'
-				id='description'
-				value={eventspaces.description}
-				placeholder='Description'
-				onChange={handleChange}
-			/>
-			<button type='submit'>Update Event Space</button>
-			<button type='button' onClick={() => navigate("/eventspace")}>
-				Cancel Event Space
-			</button>
-		</form>
+		<>
+		<div className="edit-eventspace-form-container">
+			<form className="edit-eventspace-form" onSubmit={ handleSubmit }>
+				<input
+					type='text'
+					name='name'
+					id='name'
+					value={ eventspaces.name }
+					placeholder='Event Space Name'
+					onChange={ handleChange } />
+				<input
+					type='number'
+					name='capacity'
+					value={ eventspaces.capacity }
+					placeholder='Capacity'
+					onChange={ handleChange } />
+				<input
+					type='text'
+					name='location'
+					id='location'
+					value={ eventspaces.location }
+					placeholder='Location'
+					onChange={ handleChange } />
+				<input
+					type='text'
+					name='image'
+					id='image'
+					value={ eventspaces.image }
+					placeholder='Image'
+					onChange={ handleChange } />
+				<input
+					type='text'
+					name='description'
+					id='description'
+					value={ eventspaces.description }
+					placeholder='Description'
+					onChange={ handleChange } />
+				<button type='submit'>Update Event Space</button>
+				<button type='button' onClick={ () => navigate( "/eventspace" ) }>
+					Cancel Event Space
+				</button>
+			</form>
+		</div>
+		<div className="edit-eventspace-form-image-preview">
+			<img src={ eventspaces.image } />
+		</div>
+		</>	
 	);
 }
