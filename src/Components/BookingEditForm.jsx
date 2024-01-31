@@ -40,7 +40,7 @@ export default function BookingEditForm() {
         })
         .then(() => {
             alert(`${booking.name} has been updated!`);
-            navigate('/bookings');
+            navigate(`/bookings`);
         })
         .catch(error => console.error(error));
     };
