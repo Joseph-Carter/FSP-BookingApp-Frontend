@@ -5,7 +5,7 @@ import "./LoginForm.css"
 
 const API = import.meta.env.VITE_API_URL;
 
-const LoginForm = ({ setShowNavbar }) => {
+const LoginForm = () => {
   const navigate = useNavigate();
   const [userInput, setUserInput] = useState({
     email: "",
@@ -18,11 +18,6 @@ const LoginForm = ({ setShowNavbar }) => {
       navigate(`/events`);
     }
   }, [user]);
-
-  useEffect(() => {
-    setShowNavbar(false);
-  }, [setShowNavbar]);
-
 
   const handleTextInput = (e) => {
     setUserInput({ ...userInput, [e.target.id]: e.target.value });

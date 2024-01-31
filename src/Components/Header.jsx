@@ -8,7 +8,7 @@ const HeroSection = styled.div`
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 40vh;
+  height: ${props => props.shrink ? '36vh' : '40vh'}; // 10% smaller if 'shrink' prop is true
   text-align: center;
   position: relative;
 `;
@@ -63,13 +63,14 @@ const HeaderContainer = styled.div`
 `;
 
 export default function Header() {
+  
   return (
     <HeaderContainer>
-      <HeroSection>
+      <HeroSection >
         <DarkOverlay />
         <VenueVerse>VENUEVERSE</VenueVerse>
         <NavBarWrapper>
-          <NavBar />
+        <NavBar />
         </NavBarWrapper>
         <Slogan>Meeting space for every need, just a click away.</Slogan>
       </HeroSection>
