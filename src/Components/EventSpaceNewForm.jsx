@@ -40,7 +40,7 @@ export default function EventSpaceNewForm() {
 	};
 	return (
 		<form onSubmit={handleSubmit}>
-			<input
+			<input 
 				type='text'
 				name='name'
 				id='name'
