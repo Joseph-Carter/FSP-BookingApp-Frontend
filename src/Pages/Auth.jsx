@@ -5,12 +5,17 @@ import SignUpForm from "../Components/SignUpForm";
 import "./Auth.css"
 import cosmicConnectLogo from "../assets/cosmicConnectLogo.png"
 
-const Auth = ({ setShowNavbar }) => {
+const Auth = ({ setShowNavbar, setShrinkHeader }) => {
   const { pathname } = useLocation();
 
   useEffect(() => {
     setShowNavbar(false);
-  }, [setShowNavbar]);
+    setShrinkHeader(true);  // Tell the Header to shrink
+    return () => {
+      setShowNavbar(true);  // Reset on component unmount
+      setShrinkHeader(false);
+    };
+  }, [setShowNavbar, setShrinkHeader]);
 
   return (
     <>
@@ -20,7 +25,7 @@ const Auth = ({ setShowNavbar }) => {
         <div className="splashBackground-image" />
       </div>
       <div className="bookingAuth">
-      <img src={cosmicConnectLogo} className='cosmicConnectLogo' alt="cosmicConnectLogo"/>
+      <p  className='cosmicConnectLogo' />
         {pathname.includes("login") ? (
           <LoginForm setShowNavbar={setShowNavbar} />
         ) : (

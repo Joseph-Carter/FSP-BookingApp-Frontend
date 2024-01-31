@@ -19,8 +19,6 @@ const EventSpaceGrid = styled.div`
   /* Add other styles here */
 `;
 
-// ... other styled components ...
-
 export default function EventSpaceList() {
   const [eventSpaces, setEventSpaces] = useState([]);
 
@@ -37,9 +35,13 @@ export default function EventSpaceList() {
 
   return (
     <EventSpaceListContainer>
-      <EventSpaceGrid>
         <h2>Available Spaces</h2>
-        {/* Rest of your component */}
+      <EventSpaceGrid>
+      {eventSpaces.length > 0 ? (
+          eventSpaces.map(space => <EventSpace key={space.id} space={space} />)
+        ) : (
+          <p>No Event spaces found</p>
+        )}
       </EventSpaceGrid>
     </EventSpaceListContainer>
   );

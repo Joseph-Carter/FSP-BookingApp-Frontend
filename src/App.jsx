@@ -20,18 +20,17 @@ import Auth from "./Pages/Auth";
 import Header from './Components/Header';
 
 function App() {
-  const [showNavbar, setShowNavbar] = useState(true);
+
 
   return (
     <div className="App">
       <Router>
         <AuthProvider>
-          <Header showNavbar={showNavbar} />
-      {/* {showNavbar && <NavBar />} */}
+          <Header />
         <Routes>
-          <Route path="/" element={<Navigate to="/login" setShowNavbar={setShowNavbar}/>} />
-          <Route path="/login" element={<Auth setShowNavbar={setShowNavbar}/>} />
-          <Route path="/signup" element={<Auth setShowNavbar={setShowNavbar}/>} />
+          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/login" element={<Auth />} />
+          <Route path="/signup" element={<Auth />} />
           {/* <Route path="/bookings" element={<BookingList />} /> */}
           {/* <Route path="/bookings/:id" element={<BookingDetails />} /> */}
           {/* <Route path="/bookings/new" element={<BookingNewForm />} /> */}

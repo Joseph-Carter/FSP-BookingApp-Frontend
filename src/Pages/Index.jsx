@@ -8,12 +8,7 @@ export default function Index() {
   return (
     <div>
       <EventSpaceList />
-<<<<<<< HEAD
       {/* <BookingList /> */}
-=======
-      <BookingList />
-      <Footer />
->>>>>>> refs/remotes/origin/main
     </div>
   )
 }
