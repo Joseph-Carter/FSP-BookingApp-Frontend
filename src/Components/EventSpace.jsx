@@ -23,11 +23,7 @@ export default function EventSpace({ space }) {
       <p>{space.space_name}</p>
       <p>{space.capacity}</p>
       <p>{space.location}</p>
-<<<<<<< HEAD
       {space.image ? <SpaceImage src={space.image} alt={space.space_name} /> : null}    
-=======
-      {space.image ? <img src={space.image} /> : null}{" "}
->>>>>>> refs/remotes/origin/main
     </div>
   );
 }
