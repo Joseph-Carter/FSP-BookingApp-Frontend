@@ -59,7 +59,7 @@ const SignUpForm = () => {
         <VenueVerse>VENUEVERSE</VenueVerse>
         <Slogan><span>VenueVerse Symphony:</span>
         <br />
-        <span> Every Gathering Tells a Verse.</span>
+        <span>Every Gathering Tells a Verse.</span>
         </Slogan>
       </HeroSection>
       <br />
@@ -67,7 +67,6 @@ const SignUpForm = () => {
       <br />
       <div className="signUpForm">
         <header className="signupHeader">Sign Up Form</header>{" "}
-        <header className="signupHeader">Sign Up Form</header>
         <form onSubmit={handleSubmit}>
           <input
             className="firstName signupInput"

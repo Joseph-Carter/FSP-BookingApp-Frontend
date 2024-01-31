@@ -1,6 +1,7 @@
 import React from 'react'
 import BookingNewForm from './BookingNewForm'
 import EventSpace from './EventSpace'
+import Header from './Header'
 
 
 // shows individual event spaces and a booking form

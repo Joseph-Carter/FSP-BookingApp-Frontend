@@ -29,6 +29,7 @@ const VenueVerse = styled.h1`
 const Slogan = styled.h2`
   font-family: 'Prata', serif;
   color: #fff;
+  font-size: 2.25em;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -64,6 +65,7 @@ const HeaderContainer = styled.div`
 
 export default function Header() {
   
+  
   return (
     <HeaderContainer>
       <HeroSection >
@@ -72,7 +74,9 @@ export default function Header() {
         <NavBarWrapper>
         <NavBar />
         </NavBarWrapper>
-        <Slogan>Meeting space for every need, just a click away.</Slogan>
+        <Slogan><span>Meeting space for every need,</span>
+        <br />
+        <span>just a click away.</span></Slogan>
       </HeroSection>
     </HeaderContainer>
   );

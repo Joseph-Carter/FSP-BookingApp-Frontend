@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import EventSpace from './EventSpace';
+import Header from './Header';
+import './EventSpaceList.css'
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -11,6 +13,7 @@ const EventSpaceListContainer = styled.div`
   /* Add other styles here */
 `;
 
+
 const EventSpaceGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -19,8 +22,10 @@ const EventSpaceGrid = styled.div`
   /* Add other styles here */
 `;
 
-export default function EventSpaceList() {
+export default function EventSpaceList({  }) {
   const [events, setEvents] = useState([]);
+  const [showHeader, setShowHeader] = useState(false);
+
 
   useEffect(() => {
     fetch(`${API}/events`)
@@ -33,7 +38,13 @@ export default function EventSpaceList() {
       });
   }, []);
 
+  useEffect(() => {
+    setShowHeader(false);
+  }, [setShowHeader]);
+
   return (
+    <>
+    <Header />
     <EventSpaceListContainer>
         <h2>Available Spaces</h2>
       <EventSpaceGrid>
@@ -44,5 +55,6 @@ export default function EventSpaceList() {
         )}
       </EventSpaceGrid>
     </EventSpaceListContainer>
+    </>
   );
 }

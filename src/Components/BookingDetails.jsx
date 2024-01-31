@@ -1,6 +1,7 @@
 import React from "react";
 import Booking from "./Booking";
 import { Link, useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 // shows specific booking and options for modifying
 export default function BookingDetails({ booking }) {
@@ -14,6 +15,8 @@ const navigate = useNavigate();
   };
 
   return (
+    <>
+    <Header />
     <div>
       <h3>Booking Details</h3>
       <h4>Event Name: </h4>
@@ -26,5 +29,6 @@ const navigate = useNavigate();
       <Link to={`/bookings/${booking.id}/edit`}><button>Cancel</button></Link>
       <button>Update</button>
     </div>
+    </>
   );
 }

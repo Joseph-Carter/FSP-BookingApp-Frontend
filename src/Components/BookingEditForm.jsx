@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import EventSpacesDropdown from './EventSpacesDropdown';
+import Header from './Header';
 import './BookingEditForm.css'
 
 const API = import.meta.env.VITE_API_URL;
@@ -46,6 +47,8 @@ export default function BookingEditForm() {
     };
 
     return (
+		<>
+		<Header />
 		<div className='BookingEditForm-container'>
 				<form className='BookingEditForm' onSubmit={handleSubmit}>
 				<fieldset>
@@ -121,7 +124,7 @@ export default function BookingEditForm() {
 					<button type='button' className='BookingEditForm-cancel' onClick={() => navigate(`/bookings`)}>Cancel</button>
 					</fieldset>
 			</form>
-			
 			</div>
+			</>
 		);
 }

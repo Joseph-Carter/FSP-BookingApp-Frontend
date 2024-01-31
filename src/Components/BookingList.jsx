@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Booking from './Booking';
+import Header from './Header';
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -20,6 +21,8 @@ export default function BookingList() {
     }, [])
 
   return (
+    <>
+    <Header />
         <div>
     {bookings.length > 0 ? (
         bookings.map((booking) => (
@@ -29,6 +32,6 @@ export default function BookingList() {
         <p>No bookings found</p>
     )}
 </div>
-
+</>
   )
 }

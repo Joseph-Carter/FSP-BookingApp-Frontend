@@ -1,6 +1,7 @@
 import { useState, React } from "react";
 import { useNavigate } from "react-router-dom";
 import EventSpacesDropdown from "./EventSpacesDropdown";
+import Header from "./Header";
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -41,6 +42,8 @@ export default function BookingNewForm() {
   };
 
   return (
+    <>
+    <Header />
     <form onSubmit={handleSubmit}>
       <input
         type="text"
@@ -92,5 +95,6 @@ export default function BookingNewForm() {
         Cancel Booking
       </button>
     </form>
+    </>
   );
 }

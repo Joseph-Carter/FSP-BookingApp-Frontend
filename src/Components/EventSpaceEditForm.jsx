@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 import "./EventSpaceEditForm.css";
 
 const API = import.meta.env.VITE_API_URL;
@@ -40,6 +41,7 @@ export default function EventSpaceEditForm() {
 
 	return (
 		<>
+		<Header />
 			<div className='EventSpaceEditForm-container'>
 				<form className='EventSpaceEditForm' onSubmit={handleSubmit}>
 					<fieldset>

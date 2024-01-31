@@ -1,8 +1,7 @@
 // Hero.js
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import LoginForm from '../Components/LoginForm';
 
 export const HeroSection = styled.div`
   background-image: url('/Create new Account (3).png');
@@ -85,6 +84,12 @@ export const Button = styled.button`
 
 export default function Hero() {
   const navigate = useNavigate();
+  // const [showHeader, setShowHeader] = useState(false);
+
+
+  useEffect(() => {
+    setShowHeader(false);
+  }, [setShowHeader]);
 
   return (
     <>

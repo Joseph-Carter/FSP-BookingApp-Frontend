@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 import "./EventSpaceNewForm.css";
 
 
@@ -44,6 +45,8 @@ export default function EventSpaceNewForm() {
 		setEvents({ ...events, [e.target.name]: e.target.value });
 	};
 	return (
+		<>
+		<Header />
 		<div className="form-container">
     <form onSubmit={handleSubmit}>
         <input 
@@ -97,5 +100,6 @@ export default function EventSpaceNewForm() {
         </button>
     </form>
 </div>
+</>
 	);
 }

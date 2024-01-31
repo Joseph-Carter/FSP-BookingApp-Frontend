@@ -6,6 +6,7 @@ const BookingButton = styled.button`
   padding: 20px 100px; 
   border: none;
   cursor: pointer;
+  font-size: 1.75em;
 `;
 
 const SpaceImage = styled.img`

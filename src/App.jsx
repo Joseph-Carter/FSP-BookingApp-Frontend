@@ -5,6 +5,7 @@ import {
   Route,
   Navigate,
   useParams,
+  useLocation
 } from "react-router-dom";
 import NavBar from './Components/NavBar';
 import { AuthProvider } from "./Components/UserAuth/UserContext";
@@ -27,6 +28,7 @@ const API = import.meta.env.VITE_API_URL;
 function App() {
   let { id } = useParams();
   const [event, setEvent] = useState();
+  const [showHeader, setShowHeader] = useState();
 
   useEffect(() => {
     fetch(`${API}/events`)
@@ -43,7 +45,7 @@ function App() {
     <div className="App">
       <Router>
         <AuthProvider>
-          {/* <Header /> */}
+          
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/login" element={<Auth />} />
