@@ -40,8 +40,8 @@ export default function EventSpaceEditForm() {
 
 	return (
 		<>
-		<div class="edit-eventspace-form-container">
-			<form class="edit-eventspace-form" onSubmit={ handleSubmit }>
+		<div className="edit-eventspace-form-container">
+			<form className="edit-eventspace-form" onSubmit={ handleSubmit }>
 				<input
 					type='text'
 					name='name'
@@ -81,7 +81,7 @@ export default function EventSpaceEditForm() {
 					Cancel Event Space
 				</button>
 			</form>
-		<div class="edit-eventspace-form-image-preview">
+		<div className="edit-eventspace-form-image-preview">
 			<img src={ events.image } />
 		</div>
 		</div>

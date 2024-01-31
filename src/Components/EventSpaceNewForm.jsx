@@ -46,7 +46,7 @@ export default function EventSpaceNewForm() {
 		<div className="form-container">
     <form onSubmit={handleSubmit}>
         <input 
-            class='input-text'
+            className='input-text'
             type='text'
             name='name'
             id='name'
@@ -55,7 +55,7 @@ export default function EventSpaceNewForm() {
             onChange={handleChange}
         />
         <input 
-            class='input-number'
+            className='input-number'
             type='number'
             name='capacity'
             value={events.capacity}
@@ -63,7 +63,7 @@ export default function EventSpaceNewForm() {
             onChange={handleChange}
         />
         <input 
-            class='input-text'
+            className='input-text'
             type='text'
             name='location'
             id='location'
@@ -72,7 +72,7 @@ export default function EventSpaceNewForm() {
             onChange={handleChange}
         />
         <input
-            class='input-text'
+            className='input-text'
             type='text'
             name='image'
             id='image'
@@ -81,7 +81,7 @@ export default function EventSpaceNewForm() {
             onChange={handleChange}
         />
         <input
-            class='input-text'
+            className='input-text'
             type='text'
             name='description'
             id='description'
@@ -89,8 +89,8 @@ export default function EventSpaceNewForm() {
             placeholder='Description'
             onChange={handleChange}
         />
-        <button class='submit-button' type='submit'>Submit</button>
-        <button class='cancel-button' type='button' onClick={() => navigate(`/events`)}>
+        <button className='submit-button' type='submit'>Submit</button>
+        <button className='cancel-button' type='button' onClick={() => navigate(`/events`)}>
             Cancel
         </button>
     </form>
