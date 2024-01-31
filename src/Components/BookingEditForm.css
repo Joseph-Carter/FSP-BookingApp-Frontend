@@ -1,32 +1,72 @@
-html {
-	background-image: 'https://essencedining.com/wp-content/uploads/2022/11/Sky-Bar-4.jpg';
-}
-
-.edit-booking-form-container {
+.BookingEditForm-container {
+	
+	height: 100vh;
+	background-image: url('https://essencedining.com/wp-content/uploads/2022/11/Sky-Bar-4.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 	display: grid;
-	grid-template-columns: 2fr 1fr;
+	grid-template-columns: 1fr 1fr;
+
 }
 
-#name {
+
+
+.BookingEditForm fieldset {
+	border-radius: 20px;
+	margin: 0 auto;
+	padding: 1em;
+	text-align: center;
+}
+
+.BookingEditForm legend {
+	padding: 0.5em;
+}
+
+.BookingEditForm {
+	float: left;
+	font-family: 'Prata', serif;
+	color: white;
+}
+
+#BookingEditForm-name {
+	background-color: #167ab4;
+	
+}
+
+#BookingEditForm-user_id {
 	background-color: #167ab4;
 }
 
-#user_id {
+#BookingEditForm-room_id {
 	background-color: #167ab4;
 }
 
-#room_id {
+#BookingEditForm-start_date {
 	background-color: #167ab4;
 }
 
-#start_date {
+#BookingEditForm-end_date {
 	background-color: #167ab4;
 }
 
-#end_date {
+#BookingEditForm-attendees {
 	background-color: #167ab4;
 }
 
-#special_requirements {
+#BookingEditForm-special_requirements {
 	background-color: #167ab4;
+}
+
+.BookingEditForm-submit {
+	background-color: rgb(130, 189, 211);
+	font-family: 'Prata', serif;
+	color: white;
+}
+
+
+.BookingEditForm-cancel {
+	background-color: rgb(213, 182, 122);
+	font-family: 'Prata', serif;
+	color: white;
 }

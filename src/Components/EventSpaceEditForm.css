@@ -1,37 +1,61 @@
-html {
-	background-image: 'https://sdg-migration-id.s3.amazonaws.com/Interior-Design-MAD-Architects-Hanergy-Living-Garden-03-03.19.jpg';
-	
-
-}
-
-.edit-eventspace-form-container {
+.EventSpaceEditForm-container {
+	height: 100vh;
+	background-image: url('https://sdg-migration-id.s3.amazonaws.com/Interior-Design-MAD-Architects-Hanergy-Living-Garden-03-03.19.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 	display: grid;
-	grid-template-columns: 2fr 1fr;
+	grid-template-columns: 1fr 1fr;
 }
 
-.edit-eventspace-form {
-	float: left;
+
+.EventSpaceEditForm fieldset {
+	border-radius: 20px;
+	margin: 0 auto;
+	padding: 1em;
 }
-.edit-eventspace-form-image-preview {
+
+.EventSpaceEditForm legend {
+	padding: 0.5em;
+}
+
+
+.EventSpaceEditForm {
+	float: left;
+	font-family: 'Prata', serif;
+}
+.EventSpaceEditForm-image-preview {
 	float: right;
 }
 
-#name {
+#EventSpaceEditForm-name {
 	background-color: #7b9338 ;
 }
 
-#capacity {
-	background-attachment: #7b9338;
-}
-
-#location {
+#EventSpaceEditForm-capacity {
 	background-color: #7b9338;
 }
 
-#image {
+#EventSpaceEditForm-location {
 	background-color: #7b9338;
 }
 
-#description {
+#EventSpaceEditForm-image {
 	background-color: #7b9338;
+}
+
+#EventSpaceEditForm-description {
+	background-color: #7b9338;
+}
+
+.EventSpaceEditForm-submit {
+	background-color: rgb(45, 57, 46);
+	font-family: 'Prata', serif;
+	color: white;
+}
+
+.EventSpaceEditForm-cancel {
+	background-color: rgb(208, 199, 128);
+	font-family: 'Prata', serif;
+	color: white
 }
