@@ -16,15 +16,15 @@ const SpaceImage = styled.img`
   margin: 0 auto;
 `;
 
-export default function EventSpace({ space }) {
-  
+export default function EventSpace({ event }) {
+
   return (
     <div>
       <BookingButton>Book Now</BookingButton>
-      <p>{space.space_name}</p>
-      <p>{space.capacity}</p>
-      <p>{space.location}</p>
-      {space.image ? <SpaceImage src={space.image} alt={space.space_name} /> : null}    
+      <p>{event.space}</p>
+      <p>{event.capacity}</p>
+      <p>{event.location}</p>
+      {event.image ? <SpaceImage src={event.image} alt={event.space} /> : null}    
     </div>
   );
 }

@@ -33,7 +33,7 @@ const LoginForm = () => {
       <header className="welcomeHeader">Login</header>
       <form onSubmit={handleSubmit}>
         <input
-          className="inputEmail inputfield"
+          className="inputEmail inputField"
           id="email"
           value={userInput.email}
           type="text"

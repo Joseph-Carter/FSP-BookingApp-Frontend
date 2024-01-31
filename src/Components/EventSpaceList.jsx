@@ -38,7 +38,7 @@ export default function EventSpaceList() {
         <h2>Available Spaces</h2>
       <EventSpaceGrid>
       {events.length > 0 ? (
-          events.map(space => <EventSpace key={space.id} space={space} />)
+          events.map(event => <EventSpace key={event.id} event={event} />)
         ) : (
           <p>No Event spaces found</p>
         )}

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
+  useParams,
 } from "react-router-dom";
 import NavBar from './Components/NavBar';
 import { AuthProvider } from "./Components/UserAuth/UserContext";
@@ -19,8 +20,23 @@ import Four0Four from "./Pages/Four0Four";
 import Auth from "./Pages/Auth";
 import Header from './Components/Header';
 
-function App() {
+const API = import.meta.env.VITE_API_URL;
 
+
+function App() {
+  let { id } = useParams();
+  const [event, setEvent] = useState();
+
+  useEffect(() => {
+    fetch(`${API}/events`)
+    .then((res) => res.json())
+    .then((data) => {
+      setEvent(data)
+    })
+    .catch((err) => {
+      console.error('Error fetching data:', err)
+    })
+  }, [])
 
   return (
     <div className="App">
@@ -36,7 +52,7 @@ function App() {
           {/* <Route path="/bookings/new" element={<BookingNewForm />} /> */}
           {/* <Route path="/bookings/edit" element={<BookingEditForm />} /> */}
           <Route path="/events" element={<EventSpaceList />} />
-          <Route path="/events/:id" element={<EventSpaceDetails />} />
+          <Route path="/events/:id" element={<EventSpaceDetails event={event} />} />
           <Route path="/events/new" element={<EventSpaceNewForm />} />
           <Route path="/events/edit" element={<EventSpaceEditForm />} />
           <Route path="*" element={<Four0Four />} />
