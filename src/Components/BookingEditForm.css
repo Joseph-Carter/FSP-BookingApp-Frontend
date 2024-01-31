@@ -9,7 +9,9 @@
 
 }
 
-
+::placeholder {
+	color: white
+}
 
 .BookingEditForm fieldset {
 	border-radius: 20px;
@@ -20,6 +22,7 @@
 
 .BookingEditForm legend {
 	padding: 0.5em;
+	color: white;
 }
 
 .BookingEditForm {
@@ -43,14 +46,17 @@
 
 #BookingEditForm-start_date {
 	background-color: #167ab4;
+	color: white
 }
 
 #BookingEditForm-end_date {
 	background-color: #167ab4;
+	color: white;
 }
 
 #BookingEditForm-attendees {
 	background-color: #167ab4;
+	color: white;
 }
 
 #BookingEditForm-special_requirements {

@@ -18,36 +18,34 @@ export default function EventSpaceNewForm() {
 
 	const navigate = useNavigate();
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		if (!events.name.trim()) {
-			alert('Events space name required.')
-			return;
-		}
-		fetch(`${API}/events`, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(events),
-		})
-			.then((res) => res.json())
-			.then((data) => {
-				console.log("Event Space updated:", data);
-				navigate(`/events`);
-			})
-			.catch((err) => {
-				console.error("Error:", err);
-			});
+    const addEvent = () => {
+        fetch(`${API}/events`, {
+                method: "POST",
+                body: JSON.stringify(events),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+            .then(() => {
+                navigate(`/events`);
+            })
+            .catch((error) => console.error("catch", error));
+        };
+
+	const handleChange = (event) => {
+		setEvents({ ...events, [event.target.id]: event.target.value });
 	};
 
-	const handleChange = (e) => {
-		setEvents({ ...events, [e.target.name]: e.target.value });
-	};
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        addEvent();
+    };
+
 	return (
 		<>
 		<Header />
 		<div className="form-container">
+            <h2>Add Event Space</h2>
     <form onSubmit={handleSubmit}>
         <input 
             className='input-text'
