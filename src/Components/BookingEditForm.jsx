@@ -46,8 +46,8 @@ export default function BookingEditForm() {
     };
 
     return (
-			<div className='edit-booking-form-container'>
-				<form className='edit-booking-form' onSubmit={handleSubmit}>
+			<div class='edit-booking-form-container'>
+				<form class='edit-booking-form' onSubmit={handleSubmit}>
 					<input
 						type='text'
 						name='name'
