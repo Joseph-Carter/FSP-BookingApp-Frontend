@@ -43,7 +43,7 @@ const LoginForm = () => {
         />
         <br />
         <input
-          className="inputPassword inputfield"
+          className="inputPassword inputField"
           id="password"
           value={userInput.password}
           type="password"

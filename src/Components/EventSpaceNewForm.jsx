@@ -7,7 +7,7 @@ const API = import.meta.env.VITE_API_URL;
 // add new event spaces admin only or managers
 export default function EventSpaceNewForm() {
 	const [events, setEvents] = useState({
-		name: "",
+		space_name: "",
 		capacity: 0,
 		location: "",
 		image: "",
@@ -18,6 +18,10 @@ export default function EventSpaceNewForm() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		if (!events.name.trim()) {
+			alert('Events space name required.')
+			return;
+		}
 		fetch(`${API}/events`, {
 			method: "POST",
 			headers: {
@@ -39,14 +43,14 @@ export default function EventSpaceNewForm() {
 		setEvents({ ...events, [e.target.name]: e.target.value });
 	};
 	return (
-		<div class="form-container">
+		<div className="form-container">
     <form onSubmit={handleSubmit}>
         <input 
             className='input-text'
             type='text'
             name='name'
             id='name'
-            value={events.name}
+            value={events.space_name}
             placeholder='Event Space Name'
             onChange={handleChange}
         />

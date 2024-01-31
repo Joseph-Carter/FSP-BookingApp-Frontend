@@ -4,17 +4,17 @@ import "./FooterList.css";
 
 export default function FooterList() {
   return (
-    <div class="footer-list"> 
-      <div class="slider">
+    <div className="footer-list"> 
+      <div className="slider">
   
-  <h2 class="custom-font"> Meet Our Authors </h2>
+  <h2 className="custom-font"> Meet Our Authors </h2>
   
   <a href="#michael">M</a>
   <a href="#joseph">J</a>
   <a href="#dwayne">D</a>
   <a href="#nicole">N</a>
 
-  <div class="slides">
+  <div className="slides">
     <div id="michael">
     <img src="https://avatars.githubusercontent.com/u/127798396?v=4">
     </img>

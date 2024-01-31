@@ -8,7 +8,7 @@ const HeroSection = styled.div`
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: ${props => props.shrink ? '36vh' : '40vh'}; // 10% smaller if 'shrink' prop is true
+  height: ${props => props.shrink ? '36vh' : '40vh'}; 
   text-align: center;
   position: relative;
 `;
@@ -50,7 +50,7 @@ const DarkOverlay = styled.div`
 
 const NavBarWrapper = styled.div`
   position: absolute;
-  top: calc(20px + 10px); /* Adjust the value to move NavBar down */
+  top: calc(20px + 10px);
   right: 0;
   z-index: 2;
 `;
