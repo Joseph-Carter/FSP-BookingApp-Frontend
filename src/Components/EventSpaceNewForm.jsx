@@ -31,8 +31,8 @@ export default function EventSpaceNewForm() {
             .catch((error) => console.error("catch", error));
         };
 
-	const handleChange = (e) => {
-		setEvents({ ...events, [e.target.id]: e.target.value });
+	const handleChange = (event) => {
+		setEvents({ ...events, [event.target.id]: event.target.value });
 	};
 
     const handleSubmit = (event) => {
