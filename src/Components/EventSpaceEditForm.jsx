@@ -79,9 +79,9 @@ export default function EventSpaceEditForm() {
 					Cancel Event Space
 				</button>
 			</form>
-		</div>
 		<div className="edit-eventspace-form-image-preview">
 			<img src={ eventspaces.image } />
+		</div>
 		</div>
 		</>	
 	);
