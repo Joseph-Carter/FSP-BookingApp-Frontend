@@ -16,6 +16,7 @@ import BookingNewForm from "./Components/BookingNewForm";
 import BookingEditForm from "./Components/BookingEditForm";
 import Four0Four from "./Pages/Four0Four";
 import Auth from "./Pages/Auth";
+import Header from './Components/Header';
 
 function App() {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -24,15 +25,16 @@ function App() {
     <div className="App">
       <Router>
         <AuthProvider>
-      {showNavbar && <NavBar />}
+          <Header showNavbar={showNavbar} />
+      {/* {showNavbar && <NavBar />} */}
         <Routes>
           <Route path="/" element={<Navigate to="/login" setShowNavbar={setShowNavbar}/>} />
           <Route path="/login" element={<Auth setShowNavbar={setShowNavbar}/>} />
           <Route path="/signup" element={<Auth setShowNavbar={setShowNavbar}/>} />
-          <Route path="/bookings" element={<BookingList />} />
-          <Route path="/bookings/:id" element={<BookingDetails />} />
-          <Route path="/bookings/new" element={<BookingNewForm />} />
-          <Route path="/bookings/edit" element={<BookingEditForm />} />
+          {/* <Route path="/bookings" element={<BookingList />} /> */}
+          {/* <Route path="/bookings/:id" element={<BookingDetails />} /> */}
+          {/* <Route path="/bookings/new" element={<BookingNewForm />} /> */}
+          {/* <Route path="/bookings/edit" element={<BookingEditForm />} /> */}
           <Route path="/events" element={<EventSpaceList />} />
           <Route path="/events/:id" element={<EventSpaceDetails />} />
           <Route path="/events/new" element={<EventSpaceNewForm />} />
