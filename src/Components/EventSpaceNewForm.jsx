@@ -6,7 +6,7 @@ const API = import.meta.env.VITE_API_URL;
 
 // add new event spaces admin only or managers
 export default function EventSpaceNewForm() {
-	const [eventspaces, setEventspaces] = useState({
+	const [events, setEvents] = useState({
 		name: "",
 		capacity: 0,
 		location: "",
@@ -18,12 +18,12 @@ export default function EventSpaceNewForm() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		fetch(`${API}/eventspaces`, {
+		fetch(`${API}/events`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify(eventspaces),
+			body: JSON.stringify(events),
 		})
 			.then((res) => res.json())
 			.then((data) => {
@@ -36,7 +36,7 @@ export default function EventSpaceNewForm() {
 	};
 
 	const handleChange = (e) => {
-		setEventspaces({ ...eventspaces, [e.target.name]: e.target.value });
+		setEvents({ ...events, [e.target.name]: e.target.value });
 	};
 	return (
 		<div class="form-container">
@@ -46,7 +46,7 @@ export default function EventSpaceNewForm() {
             type='text'
             name='name'
             id='name'
-            value={eventspaces.name}
+            value={events.name}
             placeholder='Event Space Name'
             onChange={handleChange}
         />
@@ -54,7 +54,7 @@ export default function EventSpaceNewForm() {
             className='input-number'
             type='number'
             name='capacity'
-            value={eventspaces.capacity}
+            value={events.capacity}
             placeholder='Capacity'
             onChange={handleChange}
         />
@@ -63,7 +63,7 @@ export default function EventSpaceNewForm() {
             type='text'
             name='location'
             id='location'
-            value={eventspaces.location}
+            value={events.location}
             placeholder='Location'
             onChange={handleChange}
         />
@@ -72,7 +72,7 @@ export default function EventSpaceNewForm() {
             type='text'
             name='image'
             id='image'
-            value={eventspaces.image}
+            value={events.image}
             placeholder='Image'
             onChange={handleChange}
         />
@@ -81,7 +81,7 @@ export default function EventSpaceNewForm() {
             type='text'
             name='description'
             id='description'
-            value={eventspaces.description}
+            value={events.description}
             placeholder='Description'
             onChange={handleChange}
         />
