@@ -17,6 +17,7 @@ const SpaceImage = styled.img`
 `;
 
 export default function EventSpace({ space }) {
+  
   return (
     <div>
       <BookingButton>Book Now</BookingButton>

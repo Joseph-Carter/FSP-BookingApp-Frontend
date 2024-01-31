@@ -4,7 +4,7 @@ import "./SignUpForm.css"
 
 const API = import.meta.env.VITE_API_URL;
 
-const SignUpForm = ({ setShowNavbar }) => {
+const SignUpForm = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
     email: "",
@@ -14,9 +14,7 @@ const SignUpForm = ({ setShowNavbar }) => {
     passwordConfirmation: "",
   });
 
-  useEffect(() => {
-    setShowNavbar(false);
-  }, [setShowNavbar]);
+ 
 
   const addUser = () => {
     fetch(`${API}/users/signup`, {
@@ -43,7 +41,7 @@ const SignUpForm = ({ setShowNavbar }) => {
 
   return (
     <div className="signUpForm">
-      <header className="signupheader">Sign Up Form</header>
+      <header className="signupHeader">Sign Up Form</header>
       <form onSubmit={handleSubmit}>
         <input
           className="firstName signupInput"
@@ -86,7 +84,7 @@ const SignUpForm = ({ setShowNavbar }) => {
         />
         <br />
         <input
-          className="confirmpassword signupInput"
+          className="confirmPassword signupInput"
           id="passwordConfirmation"
           value={user.passwordConfirmation}
           type="password"

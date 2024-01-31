@@ -5,7 +5,7 @@ import "./EventSpaceEditForm.css"
 const API = import.meta.env.VITE_API_URL;
 
 export default function EventSpaceEditForm() {
-	const [eventspaces, setEventspaces] = useState({
+	const [events, setEvents] = useState({
 		name: "",
 		capacity: 0,
 		location: "",
@@ -17,17 +17,17 @@ export default function EventSpaceEditForm() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		fetch(`${API}/eventspace`, {
+		fetch(`${API}/events`, {
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify(eventspaces),
+			body: JSON.stringify(events),
 		})
 			.then((res) => res.json())
 			.then((data) => {
 				console.log("Event Space created:", data);
-				navigate("/eventspace");
+				navigate("/events");
 			})
 			.catch((err) => {
 				console.error("Error:", err);
@@ -35,8 +35,9 @@ export default function EventSpaceEditForm() {
 	};
 
 	const handleChange = (e) => {
-		setEventspaces({ ...eventspaces, [e.target.name]: e.target.value });
+		setEventspaces({ ...events, [e.target.name]: e.target.value });
 	};
+
 	return (
 		<>
 		<div className="edit-eventspace-form-container">
@@ -45,34 +46,34 @@ export default function EventSpaceEditForm() {
 					type='text'
 					name='name'
 					id='name'
-					value={ eventspaces.name }
+					value={ events.name }
 					placeholder='Event Space Name'
 					onChange={ handleChange } />
 				<input
 					type='number'
 					name='capacity'
-					value={ eventspaces.capacity }
+					value={ events.capacity }
 					placeholder='Capacity'
 					onChange={ handleChange } />
 				<input
 					type='text'
 					name='location'
 					id='location'
-					value={ eventspaces.location }
+					value={ events.location }
 					placeholder='Location'
 					onChange={ handleChange } />
 				<input
 					type='text'
 					name='image'
 					id='image'
-					value={ eventspaces.image }
+					value={ events.image }
 					placeholder='Image'
 					onChange={ handleChange } />
 				<input
 					type='text'
 					name='description'
 					id='description'
-					value={ eventspaces.description }
+					value={ events.description }
 					placeholder='Description'
 					onChange={ handleChange } />
 				<button type='submit'>Update Event Space</button>
@@ -81,7 +82,7 @@ export default function EventSpaceEditForm() {
 				</button>
 			</form>
 		<div className="edit-eventspace-form-image-preview">
-			<img src={ eventspaces.image } />
+			<img src={ events.image } />
 		</div>
 		</div>
 		</>	

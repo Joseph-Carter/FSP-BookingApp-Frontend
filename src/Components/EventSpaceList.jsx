@@ -20,13 +20,13 @@ const EventSpaceGrid = styled.div`
 `;
 
 export default function EventSpaceList() {
-  const [eventSpaces, setEventSpaces] = useState([]);
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    fetch(`${API}/eventspaces`)
+    fetch(`${API}/events`)
       .then((res) => res.json())
       .then((data) => {
-        setEventSpaces(data);
+        setEvents(data);
       })
       .catch((err) => {
         console.error('Error fetching data:', err);
@@ -37,8 +37,8 @@ export default function EventSpaceList() {
     <EventSpaceListContainer>
         <h2>Available Spaces</h2>
       <EventSpaceGrid>
-      {eventSpaces.length > 0 ? (
-          eventSpaces.map(space => <EventSpace key={space.id} space={space} />)
+      {events.length > 0 ? (
+          events.map(space => <EventSpace key={space.id} space={space} />)
         ) : (
           <p>No Event spaces found</p>
         )}

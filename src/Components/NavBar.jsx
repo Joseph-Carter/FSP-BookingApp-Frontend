@@ -19,8 +19,8 @@ const StyledLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   color: white;
-  background: black; // Slight background for visibility
-  border-radius: 15px; // Rounded corners for the entire nav item
+  background: black;
+  border-radius: 15px;
   padding: 10px;
   transition: background-color 0.3s ease;
 
@@ -32,7 +32,7 @@ const StyledLink = styled(Link)`
   img {
     width: 30px;
     height: 30px;
-    border-radius: 50%; // Fully rounded corners for images to make them circular
+    border-radius: 50%;
   }
 
   span {
@@ -45,7 +45,7 @@ const BookingButton = styled.button`
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 20px; // Fully rounded edges for an oval shape
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
@@ -57,7 +57,7 @@ const BookingButton = styled.button`
 const NavBar = () => {
   return (
     <NavbarContainer>
-      <StyledLink to={`/rooms`}>
+      <StyledLink to={`/events`}>
         <img src="/map.jpeg" alt="Event Icon" />
         <span>Spaces</span>
       </StyledLink>
@@ -65,7 +65,6 @@ const NavBar = () => {
         <img src="/booking.png" alt="Booking Icon" />
         <span>Bookings</span>
       </StyledLink>
-      {/* Using 'as' prop to render button instead of Link */}
       <BookingButton as="button">Sign Out</BookingButton>
     </NavbarContainer>
   );
