@@ -7,7 +7,7 @@ const API = import.meta.env.VITE_API_URL;
 // add new event spaces admin only or managers
 export default function EventSpaceNewForm() {
 	const [events, setEvents] = useState({
-		name: "",
+		space_name: "",
 		capacity: 0,
 		location: "",
 		image: "",
@@ -46,7 +46,7 @@ export default function EventSpaceNewForm() {
             type='text'
             name='name'
             id='name'
-            value={events.name}
+            value={events.space_name}
             placeholder='Event Space Name'
             onChange={handleChange}
         />

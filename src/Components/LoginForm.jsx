@@ -29,11 +29,11 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="loginForm">
-      <header className="welcomeHeader">Login</header>
+    <div class="loginForm">
+      <header class="welcomeHeader">Login</header>
       <form onSubmit={handleSubmit}>
         <input
-          className="inputEmail inputField"
+          class="inputEmail inputField"
           id="email"
           value={userInput.email}
           type="text"
@@ -43,7 +43,7 @@ const LoginForm = () => {
         />
         <br />
         <input
-          className="inputPassword inputfield"
+          class="inputPassword inputfield"
           id="password"
           value={userInput.password}
           type="password"
@@ -52,13 +52,13 @@ const LoginForm = () => {
           required
         />
         <br />
-        <button className="loginButton authButtons" type="submit">
+        <button class="loginButton authButtons" type="submit">
           Log In
         </button>
       </form>
       <br />
-      <Link to={`/signup`} className="signupButtonWord">
-        <button className="signupButton authButtons" type="button">
+      <Link to={`/signup`} class="signupButtonWord">
+        <button class="signupButton authButtons" type="button">
           Sign Up
         </button>
       </Link>

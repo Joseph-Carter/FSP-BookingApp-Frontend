@@ -10,13 +10,13 @@ const Auth = () => {
 
   return (
     <>
-      <div className="splashBackground">
-        <div className="splashBackground-image" />
-        <div className="splashBackground-image" />
-        <div className="splashBackground-image" />
+      <div class="splashBackground">
+        <div class="splashBackground-image" />
+        <div class="splashBackground-image" />
+        <div class="splashBackground-image" />
       </div>
-      <div className="bookingAuth">
-      <p  className='cosmicConnectLogo' />
+      <div class="bookingAuth">
+      <p  class='cosmicConnectLogo' />
         {pathname.includes("login") ? (
           <LoginForm />
         ) : (

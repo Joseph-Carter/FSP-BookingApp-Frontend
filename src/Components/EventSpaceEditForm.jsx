@@ -35,13 +35,13 @@ export default function EventSpaceEditForm() {
 	};
 
 	const handleChange = (e) => {
-		setEventspaces({ ...events, [e.target.name]: e.target.value });
+		setEvents({ ...events, [e.target.name]: e.target.value });
 	};
 
 	return (
 		<>
-		<div className="edit-eventspace-form-container">
-			<form className="edit-eventspace-form" onSubmit={ handleSubmit }>
+		<div class="edit-eventspace-form-container">
+			<form class="edit-eventspace-form" onSubmit={ handleSubmit }>
 				<input
 					type='text'
 					name='name'
@@ -81,7 +81,7 @@ export default function EventSpaceEditForm() {
 					Cancel Event Space
 				</button>
 			</form>
-		<div className="edit-eventspace-form-image-preview">
+		<div class="edit-eventspace-form-image-preview">
 			<img src={ events.image } />
 		</div>
 		</div>

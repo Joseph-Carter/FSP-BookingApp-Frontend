@@ -40,11 +40,11 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="signUpForm">
-      <header className="signupHeader">Sign Up Form</header>
+    <div class="signUpForm">
+      <header class="signupHeader">Sign Up Form</header>
       <form onSubmit={handleSubmit}>
         <input
-          className="firstName signupInput"
+          class="firstName signupInput"
           id="firstName"
           value={user.firstName}
           type="text"
@@ -54,7 +54,7 @@ const SignUpForm = () => {
         />
         <br />
         <input
-          className="lastName signupInput"
+          class="lastName signupInput"
           id="lastName"
           value={user.lastName}
           type="text"
@@ -64,7 +64,7 @@ const SignUpForm = () => {
         />
         <br />
         <input
-          className="email signupInput"
+          class="email signupInput"
           id="email"
           value={user.email}
           type="text"
@@ -74,7 +74,7 @@ const SignUpForm = () => {
         />
         <br />
         <input
-          className="password signupInput"
+          class="password signupInput"
           id="password"
           value={user.password}
           type="password"
@@ -84,7 +84,7 @@ const SignUpForm = () => {
         />
         <br />
         <input
-          className="confirmPassword signupInput"
+          class="confirmPassword signupInput"
           id="passwordConfirmation"
           value={user.passwordConfirmation}
           type="password"
@@ -93,7 +93,7 @@ const SignUpForm = () => {
           required
         />
         <br />
-        <button className="submitFormButton" type="submit">
+        <button class="submitFormButton" type="submit">
           Submit
         </button>
       </form>
