@@ -27,10 +27,10 @@ export default function EventSpace({ event }) {
   return (
     <div>
       <Link to={`events/${event.id}`}><BookingButton>Event Space</BookingButton></Link>
-      <p>{event.space}</p>
+      <p>{event.space_name}</p>
       <p>{event.capacity}</p>
       <p>{event.location}</p>
-      {event.image ? <SpaceImage src={event.image} alt={event.space} /> : null}    
+      {event.image ? <SpaceImage src={event.image} alt={event.space_name} /> : null}    
     </div>
   );
 }

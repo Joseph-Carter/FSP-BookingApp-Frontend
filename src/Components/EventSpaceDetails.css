@@ -26,3 +26,9 @@
     font-size: 1.2em;
   }
   
+  .event-space-image {
+    max-width: 400px; 
+    width: 50%; 
+    height: auto
+  }
+  
