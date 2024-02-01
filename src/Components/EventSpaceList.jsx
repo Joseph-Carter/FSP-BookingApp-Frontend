@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-import EventSpace from './EventSpace';
-import Header from './Header';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import EventSpace from "./EventSpace";
+import Header from "./Header";
 
 const API = import.meta.env.VITE_API_URL;
 
 const EventSpaceListContainer = styled.div`
-  background-color: #8f8e8e; 
-  min-height: 100vh; 
+  background-color: #8f8e8e;
+  min-height: 100vh;
 `;
 
 const EventSpaceGrid = styled.div`
@@ -29,7 +29,7 @@ export default function EventSpaceList() {
         setEvents(data);
       })
       .catch((err) => {
-        console.error('Error fetching data:', err);
+        console.error("Error fetching data:", err);
       });
   }, []);
 
@@ -40,8 +40,11 @@ export default function EventSpaceList() {
         <h2>Available Spaces</h2>
         <EventSpaceGrid>
           {events.length > 0 ? (
-            events.map(event => (
-              <div key={event.id} onClick={() => navigate(`/event-details/${event.id}`)}>
+            events.map((event) => (
+              <div
+                key={event.id}
+                onClick={() => navigate(`/events/${event.id}`)}
+              >
                 <EventSpace event={event} />
               </div>
             ))
