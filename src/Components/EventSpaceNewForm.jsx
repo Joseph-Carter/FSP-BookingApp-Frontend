@@ -47,33 +47,40 @@ export default function EventSpaceNewForm() {
 		<div className="form-container">
             <h2>Add Event Space</h2>
     <form onSubmit={handleSubmit}>
+    <label htmlFor="name">Name:</label>
         <input 
             className='input-text'
             type='text'
             name='name'
             id='name'
+            required
             value={events.space_name}
             placeholder='Event Space Name'
             onChange={handleChange}
         />
+        <label htmlFor="capacity">Capacity:</label>
         <input 
             className='input-number'
             type='number'
             id='number'
             name='capacity'
+            required
             value={events.capacity}
             placeholder='Capacity'
             onChange={handleChange}
         />
+        <label htmlFor="location">Location:</label>
         <input 
             className='input-text'
             type='text'
             name='location'
             id='location'
+            required
             value={events.location}
             placeholder='Location'
             onChange={handleChange}
         />
+        <label htmlFor="image">Image:</label>
         <input
             className='input-text'
             type='text'
@@ -83,6 +90,7 @@ export default function EventSpaceNewForm() {
             placeholder='Image'
             onChange={handleChange}
         />
+        <label htmlFor="description">Description:</label>
         <input
             className='input-text'
             type='text'
@@ -92,10 +100,12 @@ export default function EventSpaceNewForm() {
             placeholder='Description'
             onChange={handleChange}
         />
+        <div>
         <button className='submit-button' type='submit'>Submit</button>
         <button className='cancel-button' type='button' onClick={() => navigate(`/events`)}>
             Cancel
         </button>
+        </div>
     </form>
 </div>
 </>

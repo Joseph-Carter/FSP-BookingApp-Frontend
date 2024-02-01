@@ -91,10 +91,10 @@ export default function EventSpaceEditForm() {
 							onChange={handleChange}
 						/>
 						<br />
-						<button type='submit' className="EventSpaceEditForm-submit">Update Event Space</button>
+						<button type='submit' className="EventSpaceEditForm-submit">Update</button>
 						<br />
 						<button type='button' className="EventSpaceEditForm-cancel" onClick={() => navigate(`/events`)}>
-							Cancel Event Space
+							Cancel 
 						</button>
 					</fieldset>
 				</form>
