@@ -4,12 +4,14 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	display: flex;
+	justify-content: center;
 }
 
 ::placeholder {
-	color: white
+	color: white;
+	font-family: 'Prata', serif;
+	text-align: center;
 }
 
 .EventSpaceEditForm fieldset {

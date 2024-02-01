@@ -9,7 +9,9 @@
 }
 
 ::placeholder {
-	color: white
+	color: white;
+	font-family: 'Prata', serif;
+	text-align: center;
 }
 
 .BookingEditForm fieldset {
