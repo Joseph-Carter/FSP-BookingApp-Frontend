@@ -8,6 +8,17 @@ export default function BookingDetails({ booking }) {
   const [showBookingForm, setShowBookingForm] = useState();
 const navigate = useNavigate();
 
+useEffect(() => {
+  fetch(`${API}/bookings/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      setEvent(data);
+    })
+    .catch((err) => {
+      console.error('Error:', err);
+    });
+}, [id]);
+
 const handleShowBookingForm = () => {
   setShowBookingForm(true);
 };

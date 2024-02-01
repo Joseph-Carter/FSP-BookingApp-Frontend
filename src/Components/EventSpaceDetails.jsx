@@ -50,6 +50,14 @@ const ButtonContainer = styled.div`
   margin-top: 20px;
 `;
 
+const handleOpenModal = () => {
+  setModalOpen(true);
+};
+
+const handleCloseModal = () => {
+  setModalOpen(false);
+};
+
 
 export default function EventSpaceDetails() {
   const [event, setEvent] = useState(null);
@@ -67,6 +75,8 @@ export default function EventSpaceDetails() {
         console.error('Error:', err);
       });
   }, [id]);
+
+  
 
   const handleDelete = () => {
     fetch(`${API}/events/${id}`, { method: "DELETE" })

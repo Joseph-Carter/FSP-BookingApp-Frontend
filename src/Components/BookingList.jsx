@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import Booking from "./Booking";
-import Header from "./Header";
+import React, { useEffect, useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import styled from 'styled-components';
+import Booking from './Booking';
+import Header from './Header';
 
 const API = import.meta.env.VITE_API_URL;
 
 const BookingListContainer = styled.div`
-  background-color: #8f8e8e;
-  min-height: 100vh;
+  background-color: #8f8e8e; 
+  min-height: 100vh; 
 `;
 
 const BookingGrid = styled.div`
@@ -29,7 +29,7 @@ export default function BookingList() {
         setBookings(data);
       })
       .catch((err) => {
-        console.error("Error fetching data:", err);
+        console.error('Error fetching data:', err);
       });
   }, []);
 
@@ -40,11 +40,8 @@ export default function BookingList() {
         <h2>Existing Bookings</h2>
         <BookingGrid>
           {bookings.length > 0 ? (
-            bookings.map((booking) => (
-              <div
-                key={booking.id}
-                onClick={() => navigate(`/bookings/${booking.id}`)}
-              >
+            bookings.map(booking => (
+              <div key={booking.id} onClick={() => navigate(`/bookings/${booking.id}`)}>
                 <Booking booking={booking} />
               </div>
             ))
@@ -53,6 +50,7 @@ export default function BookingList() {
           )}
         </BookingGrid>
       </BookingListContainer>
+      <Link to="/booking/new">Create New Booking</Link>
     </>
   );
 }

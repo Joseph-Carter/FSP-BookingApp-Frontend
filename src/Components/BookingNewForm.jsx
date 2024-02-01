@@ -30,6 +30,7 @@ export default function BookingNewForm() {
       .then((res) => res.json())
       .then((data) => {
         console.log("Booking created:", data);
+        closeForm();
         navigate("/bookings");
       })
       .catch((err) => {
@@ -39,6 +40,10 @@ export default function BookingNewForm() {
 
   const handleChange = (e) => {
     setNewBooking({ ...newBooking, [e.target.name]: e.target.value });
+  };
+
+  const closeForm = () => {
+    onClose(); 
   };
 
   
@@ -92,7 +97,7 @@ export default function BookingNewForm() {
       ></textarea>
       <EventSpacesDropdown />
       <button type="submit">Submit Booking</button>
-      <button type="button" onClick={() => navigate("/bookings")}>
+      <button type="button" onClick={closeForm}>
         Cancel Booking
       </button>
     </form>
