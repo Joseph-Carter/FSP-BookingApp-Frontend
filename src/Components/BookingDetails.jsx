@@ -5,7 +5,16 @@ import Header from "./Header";
 
 // shows specific booking and options for modifying
 export default function BookingDetails({ booking }) {
+  const [showBookingForm, setShowBookingForm] = useState();
 const navigate = useNavigate();
+
+const handleShowBookingForm = () => {
+  setShowBookingForm(true);
+};
+
+const handleCloseBookingForm = () => {
+  setShowBookingForm(false);
+}
 
   const handleDelete = () => {
     const httpOptions = { method: "DELETE" };
@@ -15,20 +24,20 @@ const navigate = useNavigate();
   };
 
   return (
-    <>
-    <Header />
     <div>
-      <h3>Booking Details</h3>
-      <h4>Event Name: </h4>
-      <Booking booking={booking} />
-      <p>Start Date: {booking.start_date}</p>
-      <p>End Date: {end_date}</p>
-      <p>Spaced Used: </p>
-      <p>Attendees:</p>
-      <p>Checkout status: {checkout ? "Yes" : "No"}</p>
-      <Link to={`/bookings/${booking.id}/edit`}><button>Cancel</button></Link>
-      <button>Update</button>
+      <div className="event-space-details">
+        <h2>{event.space_name}</h2>
+        <p>Capacity: {event.capacity}</p>
+        <p>Location: {event.location}</p>
+        {event.image && <img src={event.image} alt={event.space_name} />}
+        <p>Description: {event.description}</p>
+      </div>
+      <button onClick={handleShowBookingForm}>New Booking</button>
+      {showBookingForm && (
+        <div className="modal">
+          <BookingNewForm event={event} closeForm={handleCloseBookingForm} />
+        </div>
+      )}
     </div>
-    </>
   );
 }

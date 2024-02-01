@@ -1,31 +1,26 @@
-// EventSpaceList.js
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import EventSpace from './EventSpace';
 import Header from './Header';
-import './EventSpaceList.css'
 
 const API = import.meta.env.VITE_API_URL;
 
 const EventSpaceListContainer = styled.div`
-  background-color: #8f8e8e; /* Setting the background color */
-  min-height: 100vh; /* Ensuring it covers at least the whole viewport height */
-  /* Add other styles here */
+  background-color: #8f8e8e; 
+  min-height: 100vh; 
 `;
-
 
 const EventSpaceGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
-  /* Add other styles here */
 `;
 
-export default function EventSpaceList({  }) {
+export default function EventSpaceList() {
   const [events, setEvents] = useState([]);
-  const [showHeader, setShowHeader] = useState(false);
-
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`${API}/events`)
@@ -38,23 +33,23 @@ export default function EventSpaceList({  }) {
       });
   }, []);
 
-  useEffect(() => {
-    setShowHeader(false);
-  }, [setShowHeader]);
-
   return (
     <>
-    <Header />
-    <EventSpaceListContainer>
+      <Header />
+      <EventSpaceListContainer>
         <h2>Available Spaces</h2>
-      <EventSpaceGrid>
-      {events.length > 0 ? (
-          events.map(event => <EventSpace key={event.id} event={event} />)
-        ) : (
-          <p>No Event spaces found</p>
-        )}
-      </EventSpaceGrid>
-    </EventSpaceListContainer>
+        <EventSpaceGrid>
+          {events.length > 0 ? (
+            events.map(event => (
+              <div key={event.id} onClick={() => navigate(`/event-details/${event.id}`)}>
+                <EventSpace event={event} />
+              </div>
+            ))
+          ) : (
+            <p>No Event spaces found</p>
+          )}
+        </EventSpaceGrid>
+      </EventSpaceListContainer>
     </>
   );
 }

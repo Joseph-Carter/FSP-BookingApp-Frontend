@@ -3,6 +3,7 @@ import EventSpaceDetails from '../Components/EventSpaceDetails'
 import BookingNewForm from '../Components/BookingNewForm'
 
 export default function Show() {
+  
   return (
     <div>
     <div>

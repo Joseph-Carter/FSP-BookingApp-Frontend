@@ -84,7 +84,7 @@ export const Button = styled.button`
 
 export default function Hero() {
   const navigate = useNavigate();
-  // const [showHeader, setShowHeader] = useState(false);
+  const [showHeader, setShowHeader] = useState(false);
 
 
   useEffect(() => {

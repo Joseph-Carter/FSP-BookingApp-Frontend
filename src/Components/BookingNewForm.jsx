@@ -41,9 +41,10 @@ export default function BookingNewForm() {
     setNewBooking({ ...newBooking, [e.target.name]: e.target.value });
   };
 
+  
+
   return (
     <>
-    <Header />
     <form onSubmit={handleSubmit}>
       <input
         type="text"
