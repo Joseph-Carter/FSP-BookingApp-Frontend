@@ -6,7 +6,7 @@ import "./EventSpaceEditForm.css";
 const API = import.meta.env.VITE_API_URL;
 
 export default function EventSpaceEditForm() {
-	const [events, setEvents] = useState({
+	const [ events, setEvents ] = useState({
 		name: "",
 		capacity: 0,
 		location: "",
@@ -28,7 +28,7 @@ export default function EventSpaceEditForm() {
 			.then((res) => res.json())
 			.then((data) => {
 				console.log("Event Space created:", data);
-				navigate("/events");
+				navigate(`/events`);
 			})
 			.catch((err) => {
 				console.error("Error:", err);
