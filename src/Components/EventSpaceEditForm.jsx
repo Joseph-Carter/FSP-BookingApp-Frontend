@@ -16,8 +16,8 @@ export default function EventSpaceEditForm() {
 
 	const navigate = useNavigate();
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
+	const handleSubmit = (event) => {
+		event.preventDefault();
 		fetch(`${API}/events`, {
 			method: "PUT",
 			headers: {
@@ -35,8 +35,8 @@ export default function EventSpaceEditForm() {
 			});
 	};
 
-	const handleChange = (e) => {
-		setEvents({ ...events, [e.target.name]: e.target.value });
+	const handleChange = (event) => {
+		setEvents({ ...events, [event.target.name]: event.target.value });
 	};
 
 	return (
