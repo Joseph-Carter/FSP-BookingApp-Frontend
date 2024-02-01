@@ -99,7 +99,7 @@ export default function EventSpaceEditForm() {
 					</fieldset>
 				</form>
 				<div className='EventSpaceEditForm-image-preview'>
-					<img src={events.image} />
+					<img src={events.image} alt={events.name}/>
 				</div>
 			</div>
 		</>
