@@ -3,11 +3,9 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
   useParams,
-  useLocation
 } from "react-router-dom";
-import NavBar from './Components/NavBar';
+
 import { AuthProvider } from "./Components/UserAuth/UserContext";
 import EventSpaceList from "./Components/EventSpaceList";
 import EventSpaceDetails from "./Components/EventSpaceDetails"; 
@@ -19,7 +17,6 @@ import BookingNewForm from "./Components/BookingNewForm";
 import BookingEditForm from "./Components/BookingEditForm";
 import Four0Four from "./Pages/Four0Four";
 import Auth from "./Pages/Auth";
-import Header from './Components/Header';
 import Hero from './Pages/Hero';
 
 const API = import.meta.env.VITE_API_URL;
@@ -28,10 +25,10 @@ const API = import.meta.env.VITE_API_URL;
 function App() {
   let { id } = useParams();
   const [event, setEvent] = useState();
-  const [showHeader, setShowHeader] = useState();
+  
 
   useEffect(() => {
-    fetch(`${API}/events`)
+    fetch(`${API}/events/${id}`)
     .then((res) => res.json())
     .then((data) => {
       setEvent(data)
