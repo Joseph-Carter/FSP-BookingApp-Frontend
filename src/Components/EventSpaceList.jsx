@@ -28,8 +28,8 @@ export default function EventSpaceList() {
       .then((data) => {
         setEvents(data);
       })
-      .catch((err) => {
-        console.error("Error fetching data:", err);
+      .catch((error) => {
+        console.error("Error fetching data:", error);
       });
   }, []);
 
