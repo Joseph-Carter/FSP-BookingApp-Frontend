@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useParams,
 } from "react-router-dom";
 
 import { AuthProvider } from "./Components/UserAuth/UserContext";
@@ -23,26 +22,31 @@ const API = import.meta.env.VITE_API_URL;
 
 
 function App() {
-  let { id } = useParams();
+
   const [event, setEvent] = useState();
   
-
   useEffect(() => {
-    fetch(`${API}/events/${id}`)
-    .then((res) => res.json())
-    .then((data) => {
-      setEvent(data)
-    })
-    .catch((err) => {
-      console.error('Error fetching data:', err)
-    })
-  }, [])
+    fetch(`${API}/events`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Failed to fetch`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setEvent(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  
 
   return (
     <div className="App">
       
-        <AuthProvider>
-        <Router>
+  <AuthProvider>
+      <Router>
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/login" element={<Auth />} />
@@ -60,8 +64,7 @@ function App() {
         </Routes>
         </Router>
         </AuthProvider>
-     
-    </div>
+     </div>
   );
 }
 

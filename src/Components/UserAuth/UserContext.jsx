@@ -1,11 +1,11 @@
 import { useState, createContext, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const API = import.meta.env.VITE_API_URL;
 const AuthContext = createContext();
 
 export const AuthProvider = (props) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [user, setUser] = useState({
     email: false,
     password: false,
@@ -22,7 +22,7 @@ export const AuthProvider = (props) => {
       .then((response) => response.json())
       .then((data) => {
         setUser(data);
-        navigate(`/events`)
+        // navigate(`/events`)
       });
 
   const value = {
