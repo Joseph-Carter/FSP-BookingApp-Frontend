@@ -50,10 +50,10 @@ function App() {
           <Route path="/" element={<Hero />} />
           <Route path="/login" element={<Auth />} />
           <Route path="/signup" element={<Auth />} />
-          {/* <Route path="/bookings" element={<BookingList />} /> */}
-          {/* <Route path="/bookings/:id" element={<BookingDetails />} /> */}
-          {/* <Route path="/bookings/new" element={<BookingNewForm />} /> */}
-          {/* <Route path="/bookings/edit" element={<BookingEditForm />} /> */}
+          <Route path="/bookings" element={<BookingList />} />
+          <Route path="/bookings/:id" element={<BookingDetails />} />
+          <Route path="/bookings/new" element={<BookingNewForm />} />
+          <Route path="/bookings/edit" element={<BookingEditForm />} />
           <Route path="/bookings/edit" element={ <BookingEditForm /> } />
           <Route path="/events" element={<EventSpaceList />} />
           <Route path="/events/:id" element={<EventSpaceDetails event={event} />} />
