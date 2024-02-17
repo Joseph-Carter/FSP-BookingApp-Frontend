@@ -43,9 +43,9 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
+      
         <AuthProvider>
-          
+        <Router>
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/login" element={<Auth />} />
@@ -61,8 +61,9 @@ function App() {
           <Route path="/events/edit" element={<EventSpaceEditForm event={event} />} />
           <Route path="*" element={<Four0Four />} />
         </Routes>
+        </Router>
         </AuthProvider>
-      </Router>
+     
     </div>
   );
 }
