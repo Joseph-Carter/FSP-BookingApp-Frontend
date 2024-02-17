@@ -22,14 +22,13 @@ const API = import.meta.env.VITE_API_URL;
 
 
 function App() {
+const [event, setEvent] = useState();
 
-  const [event, setEvent] = useState();
-  
   useEffect(() => {
     fetch(`${API}/events`)
       .then((response) => {
         if (!response.ok) {
-          throw new Error(`Failed to fetch`);
+          throw (`Failed to fetch: ${response.status} ${response.statusText}`);
         }
         return response.json();
       })
@@ -41,6 +40,7 @@ function App() {
       });
   }, []);
   
+
 
   return (
     <div className="App">

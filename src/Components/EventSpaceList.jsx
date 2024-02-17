@@ -24,7 +24,7 @@ export default function EventSpaceList() {
 
   useEffect(() => {
     fetch(`${API}/events`)
-      .then((res) => res.json())
+      .then((response) => response.json())
       .then((data) => {
         setEvents(data);
       })
